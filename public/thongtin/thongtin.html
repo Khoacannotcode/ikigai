@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title> Dungmori - Trang hỗ trợ </title>
+    <meta http-equiv="content-language" content="vi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="csrf-token" content="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-site-verification" content="qXXUA_R1uoDBf-1WE-ghxdEO6pirYuP-yDVB5iqytRg" />
+
+    <meta name="author" content=" DungMori " />
+    <meta name="description" content="Dungmori YouTuber dạy tiếng nhật với phong cách gần gũi dễ hiểu nhất " />
+    <meta name="robots" content="index,follow" />
+
+    <link rel="icon" href="https://dungmori.com/assets/img/fav.png" />
+    <link rel="alternate" href="https://dungmori.com" hreflang="vi" />
+
+    <meta property="og:title" content=" Dungmori - Trang hỗ trợ " />
+    <meta property="og:description" content="Dungmori YouTuber dạy tiếng nhật với phong cách gần gũi dễ hiểu nhất " />
+    <meta property="og:image" content="https://dungmori.com/assets/img/dmr-square-logo.png " />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DungMori" />
+    <meta property="og:url" content="" />
+    <meta property="og:image:type" content=".png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+
+    <meta property="fb:app_id" content="1768213996826394" />
+    <meta property="fb:admins" content="100004908811327" />
+    <meta property="fb:admins" content="1725907325" />
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://dungmori.com/assets/css/styles.css?1606288731" rel="stylesheet" type="text/css">
+    <script src="https://dungmori.com/assets/js/headlibs.js?1604563116"></script>
+
+
+</head>
+
+<body>
+    <div id="application">
+
+
+
+
+        <div class="site-header">
+
+
+
+
+            <div class="header-top">
+                <ul class="nav-left">
+                    <li> <a href="https://dungmori.com/thi-thu" class="mn-item thi-thu" style="font-weight: bold; color: red;">DUNGMORI 日本語テスト <i class="fa fa-spinner fa-spin fa-fw"></i></a></li>
+
+                    <li> <a href="https://dungmori.com/giao-vien" class="mn-item giao-vien">Giáo viên</a></li>
+                    <li> <a href="https://dungmori.com/bai-viet" class="mn-item bai-viet">Bài viết</a></li>
+                    <li> <a href="https://dungmori.com/ho-tro" class="mn-item ho-tro">Hỗ trợ</a></li>
+                    <li> <a href="https://dungmori.com/trang/hoc-offline" class="mn-item hoc-offline">Lớp OFFLINE</a></li>
+
+                    <div class="account-container" id="account-container">
+
+                        <div class="login-container" id="auth-container" style="display: none;">
+                            <div class="login-left-container">
+                                <img class="auth-featured-image" src="https://dungmori.com/assets/img/auth-thanh.png" />
+                            </div>
+                            <div class="login-right-container">
+
+                                <ul class="nav nav-pills">
+                                    <li class="li-tab login-tab active" onclick="swichTab('login')"><a data-toggle="pill" href="#login-content">Đăng nhập</a></li>
+                                    <li class="li-tab register-tab" onclick="swichTab('register')"><a data-toggle="pill" href="#register-content">Tạo tài khoản</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="register-content" class="tab-pane fade">
+                                        <div class="col-md-11" data-selectable="true">
+                                            <form id="register-form" class="form-horizontal" accept-charset="UTF-8" autocomplete="off">
+                                                <input type="hidden" name="_token" value="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <div class="error-container" id="error-container-login" style="display: none;" v-show="error != null">
+                                                            <div class="alert-danger" id="error-register-content"><i class="zmdi zmdi-alert-octagon"></i> {{error}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Họ và tên</label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="name" id="register-name" v-on:click="hideError" placeholder="Họ và tên" autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Email</label>
+                                                    <div class="col-md-8">
+                                                        <input type="email" class="form-control" name="email" id="register-email" v-on:click="hideError" placeholder="Email" autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Mật khẩu</label>
+                                                    <div class="col-md-8">
+                                                        <input type="password" class="form-control" name="password" id="register-password" v-on:click="hideError" placeholder="Mật khẩu" style="margin-bottom: 0; border-bottom: none;" autocomplete="off" required>
+                                                        <input type="password" class="form-control" name="password_confirm" id="register-password-confirm" v-on:click="hideError" placeholder="Nhập lại mật khẩu" autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Số điện thoại</label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="phone" id="register-phone" v-on:click="hideError" placeholder="Điện thoại" autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Giới tính</label>
+                                                    <div class="col-md-8">
+                                                        <select name="gender" class="form-control" style="height: 32px;">
+                    <option value="" disabled selected>- Chọn giới tính -</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                  </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Ngày sinh</label>
+                                                    <div class="col-md-8">
+                                                        <div class="row">
+
+                                                            <div class="col-xs-5" style="padding-right: 0;">
+
+                                                                <select name="birth_month" class="form-control" id="register-month">
+                            <option value="">Chọn tháng</option>
+                                                        <option value="1">Tháng 1</option>
+                                                        <option value="2">Tháng 2</option>
+                                                        <option value="3">Tháng 3</option>
+                                                        <option value="4">Tháng 4</option>
+                                                        <option value="5">Tháng 5</option>
+                                                        <option value="6">Tháng 6</option>
+                                                        <option value="7">Tháng 7</option>
+                                                        <option value="8">Tháng 8</option>
+                                                        <option value="9">Tháng 9</option>
+                                                        <option value="10">Tháng 10</option>
+                                                        <option value="11">Tháng 11</option>
+                                                        <option value="12">Tháng 12</option>
+                                                      </select>
+
+
+                                                            </div>
+                                                            <div class="col-xs-3" style="padding: 0 5px;">
+                                                                <input type="number" name="birth_day" id="register-day" v-on:click="hideError" class="form-control" placeholder="Ngày" autocomplete="off" required/>
+                                                            </div>
+                                                            <div class="col-xs-4" style="padding-left: 0;">
+                                                                <input type="number" name="birth_year" id="register-year" v-on:click="hideError" class="form-control" placeholder="Năm" autocomplete="off" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Trình độ</label>
+                                                    <div class="col-md-8">
+                                                        <select name="japanese_level" class="form-control" style="height: 32px;">
+                       <option value="" disabled selected>- Chọn trình độ hiện tại -</option>
+                       <option value="Không">Bắt đầu học</option>
+                       <option value="N5">Đã qua N5</option>
+                       <option value="N4">Đã qua N4</option>
+                       <option value="N3">Đã qua N3</option>
+                       <option value="N2">Đã qua N2</option>
+                       <option value="N1">Đã qua N1</option>
+                     </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Quốc gia</label>
+                                                    <div class="col-md-8">
+                                                        <select name="country" class="form-control" style="height: 32px;">
+                      <option value="" disabled selected>- Chọn quốc gia -</option>
+                      <option value="230">Việt Nam</option>
+                      <option value="107">Japan</option>
+                      <option value="1">Khác</option>
+                    </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <div class="checkbox" style="margin-top: 0; padding-top: 0;">
+                                                            <label for="agree-checkbox" class="agree-policy">
+                          <input id="agree-checkbox" type="checkbox" name="agreement" checked> 
+                          <span>Đồng ý với các <a href="https://dungmori.com/trang/dieu-khoan-su-dung" target="_blank">điều khoản sử dụng</a> và 
+                            <a  href="https://dungmori.com/trang/chinh-sach-bao-mat" target="_blank">chính sách bảo mật</a> của website DungMori</span>
+                      </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-8 col-md-offset-4">
+
+                                                        <button type="button" class="btn-register" id="register-submit" v-on:click="register" style="border: none;">
+                      <span v-show="buttonState == true">Đăng ký</span>
+                      <span v-show="buttonState == false"><i class="fa fa-spinner fa-pulse fa-fw"></i> Đang xác thực...</span>
+                    </button>
+
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="login-content" class="tab-pane fade in active">
+                                        <div class="col-md-11">
+
+                                            <form id="login-form" accept-charset="UTF-8" class="form-horizontal">
+                                                <input type="hidden" name="_token" value="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <div class="error-container">
+                                                            <div class="alert-danger" style="display: none;" v-show="error != null"><i class="zmdi zmdi-alert-octagon"></i> {{error}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Email</label>
+                                                    <div class="col-md-8">
+                                                        <input id="email" class="form-control" type="email" name="email" v-on:click="hideError" placeholder="Email hoặc tên đăng nhập" autocomplete="off" required autofocus onkeypress="return enterToLogin(event, this)">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Mật khẩu</label>
+                                                    <div class="col-md-8">
+                                                        <input id="password" type="password" class="form-control" name="password" v-on:click="hideError" placeholder="Mật khẩu" autocomplete="off" required onkeypress="return enterToLogin(event, this)">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" v-if="countWrongPass >= 5">
+                                                    <label class="col-md-4 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" style="width: 200px;" id="captcha_login" name="captcha" placeholder="Nhập mã bên dưới" required autocomplete="off"><br>
+                                                        <div class="captcha-container" id="captcha_login_change" style="float: left;"><img src="https://dungmori.com/captcha/image?46568635" alt="https://github.com/igoshev/laravel-captcha" style="cursor:pointer;width:150px;height:40px;" title="Update" onclick="this.setAttribute('src','https://dungmori.com/captcha/image?46568635?_='+Math.random());var captcha=document.getElementById('captcha');if(captcha){captcha.focus()}">
+                                                        </div><i style="margin-top: 12px; margin-left: 10px;" class="glyphicon glyphicon-repeat" v-on:click="changeCaptchaLogin()"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <div class="checkbox">
+                                                            <label for="login-remember" class="agree-policy">
+                          <input id="login-remember" type="checkbox" name="remember">
+                          <span>Ghi nhớ đăng nhập</span>
+                      </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <button type="button" class="btn-login" id="login-submit" v-on:click="login">
+                      <span v-show="buttonState == true">Đăng nhập</span>
+                      <span v-show="buttonState == false"><i class="fa fa-spinner fa-pulse fa-fw"></i> Đang xác thực...</span>
+                    </button>
+                                                        <p><a href="https://dungmori.com/password/reset" style="color: #333; opacity: 0.7;">Quên mật khẩu ?</a></p>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-8" style="padding-left: 0; margin-top: 10px;">
+                                        <div class="break-line">Hoặc đăng nhập nhanh bằng</div>
+                                        <a href="https://dungmori.com/oauth/facebook" onclick="authBySocicalAccount()" title="Facebook">
+                                            <button type="button" class="btn btn-social btn-facebook waves-effect waves-light m-t-20" style="width: 80px;">
+                <i class="fa fa-facebook m-r-5"></i> </button>
+                                        </a>
+                                        <a href="https://dungmori.com/oauth/google" onclick="authBySocicalAccount()" title="Google">
+                                            <button type="button" class="btn btn-social btn-googleplus waves-effect waves-light m-t-20" style="width: 80px;">
+                <i class="fa fa-google-plus m-r-5"></i> </button>
+                                        </a>
+                                        <a href="https://dungmori.com/oauth/apple" onclick="authBySocicalAccount()" title="Apple">
+                                            <button type="button" class="btn btn-social btn-apple waves-effect waves-light m-t-20" style="width: 80px;">
+               <i class="fa fa-apple m-r-5"></i> </button>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <a data-fancybox data-animation-duration="300" data-src="#auth-container">
+                            <div class="text-register" onclick="swichTab('register')">Tạo tài khoản</div>
+                        </a>
+                        <a data-fancybox data-animation-duration="300" data-src="#auth-container">
+                            <div class="text-login" onclick="swichTab('login')">Đăng nhập</div>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+
+
+            <div class="header-content mid-header">
+                <div class="container">
+                    <a href="https://dungmori.com" class="logo" id="logo">
+                        <img src="https://dungmori.com/assets/img/new_home/header_logo.png" alt="dungmori logo">
+                    </a>
+                    <div class="block-nav-menu">
+                        <ul class="ui-menu">
+                            <li>
+                                <div class="free" style="margin-left: 54px">miễn phí</div>
+                                <a href="https://dungmori.com/khoa-hoc/chuyen-nganh" class="mn-item chuyen-nganh">Chuyên ngành</a>
+                            </li>
+                            <li>
+                                <div class="free">miễn phí</div> <a href="https://dungmori.com/khoa-hoc/khoa-n5" class="mn-item cn5">Khóa N5</a></li>
+                            <li> <a href="https://dungmori.com/khoa-hoc/khoa-n4" class="mn-item cn4">Khóa N4</a></li>
+                            <li> <a href="https://dungmori.com/khoa-hoc/khoa-n3" class="mn-item cn3">Khóa N3</a></li>
+                            <li> <a href="https://dungmori.com/khoa-hoc/khoa-n2" class="mn-item cn2">Khóa N2</a></li>
+                            <li> <a href="https://dungmori.com/khoa-hoc/khoa-n1" class="mn-item cn1">Khóa N1</a></li>
+                            <li>
+
+                                <a href="https://dungmori.com/khoa-hoc/kaiwa-so-cap" class="mn-item kaiwa">Kaiwa</a>
+                            </li>
+                            <li>
+                                <a href="https://dungmori.com/khoa-hoc/eju" class="mn-item eju">Khóa EJU</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="mobile-header">
+
+            <div id="nav-icon">
+                <span class="nav-span"></span>
+                <span class="nav-span"></span>
+                <span class="nav-span"></span>
+                <ul class="dropdown-menu">
+
+
+
+                    <li>
+                        <a href="https://dungmori.com"><img class="icon-menu-item" src="https://dungmori.com/assets/img/new_home/m-home.png" />
+                            <p>Trang chủ</p>
+                        </a>
+                    </li>
+
+                    <div class="col">
+                        <div class="tabs">
+                            <div class="tab">
+                                <input type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1"><img class="icon-menu-item" src="https://dungmori.com/assets/img/new_home/m-jlpt.png" /><p>Khoá JLPT</p></label>
+                                <div class="tab-content">
+                                    <a href="https://dungmori.com/khoa-hoc/khoa-n5">
+                                        <p>N5
+                                            <div class="free" style="margin-left: 54px">miễn phí</div>
+                                        </p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/khoa-n4">
+                                        <p>N4</p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/khoa-n3">
+                                        <p>N3</p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/khoa-n2">
+                                        <p>N2</p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/khoa-n1">
+                                        <p>N1</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tab">
+                                <input type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2"><img class="icon-menu-item" src="https://dungmori.com/assets/img/new_home/m-kaiwa.png" /><p>Khoá Kaiwa</p></label>
+                                <div class="tab-content">
+                                    <a href="https://dungmori.com/khoa-hoc/kaiwa-so-cap">
+                                        <p>Kaiwa sơ cấp</p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/kaiwa-trung-cap">
+                                        <p>Kaiwa trung cấp</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tab">
+                                <input type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3"><img class="icon-menu-item" src="https://dungmori.com/assets/img/new_home/m-eju.png" /><p>Khoá EJU</p></label>
+                                <div class="tab-content">
+                                    <a href="https://dungmori.com/khoa-hoc/eju">
+                                        <p>EJU Tiếng Nhật</p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/eju-xhth">
+                                        <p>EJU XHTH</p>
+                                    </a>
+                                    <a href="https://dungmori.com/khoa-hoc/eju-toan">
+                                        <p>EJU Toán</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <li>
+                        <a href="https://dungmori.com/khoa-hoc/chuyen-nganh"><img class="icon-menu-item" src="https://dungmori.com/assets/img/new_home/m-cn.png" />
+                            <p>Chuyên ngành</p>
+                        </a>
+                    </li>
+                    <li style="border-top: 1px solid #41A336; margin-top: 10px; padding-top: 15px;">
+                        <a style="color: red;" href="https://dungmori.com/thi-thu">
+                            <p>DUNGMORI 日本語テスト </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dungmori.com/giao-vien">
+                            <p>Giáo viên</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dungmori.com/bai-viet">
+                            <p>Bài viết</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dungmori.com/ho-tro">
+                            <p>Hỗ trợ</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dungmori.com/trang/hoc-offline">
+                            <p>Lớp OFFLINE</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="https://dungmori.com" class="logo" id="logo">
+                <img src="https://dungmori.com/assets/img/new_home/header_logo.png" alt="dungmori logo">
+            </a>
+            <div class="account-container" id="account-container">
+
+                <a data-fancybox data-animation-duration="300" data-src="#auth-container">
+                    <div class="text-register" onclick="swichTab('register')">Tạo tài khoản</div>
+                </a>
+                <a data-fancybox data-animation-duration="300" data-src="#auth-container">
+                    <div class="text-login" onclick="swichTab('login')">Đăng nhập</div>
+                </a>
+            </div>
+
+        </div>
+
+
+
+
+
+        <input type="hidden" id="csrf_token" value="duongminhluong89">
+
+        <div class="main">
+            <div class="main-center">
+
+                <div class="main-support-left">
+                    <a class="item-question-heading" href="https://dungmori.com/ho-tro" style="color: #a51817;">HỖ TRỢ</a>
+                    <a href="https://dungmori.com/ho-tro/chuong-trinh-uu-dai-danh-rieng-cho-khoa-online-n1" class="item-question chuong-trinh-uu-dai-danh-rieng-cho-khoa-online-n1">Chương trình ưu đãi dành riêng cho khóa online N1</a>
+                    <a href="https://dungmori.com/ho-tro/cach-khac-phuc-cac-loi-khi-dang-nhap-vao-hoc" class="item-question cach-khac-phuc-cac-loi-khi-dang-nhap-vao-hoc">Cách khắc phục các lỗi khi đăng nhập vào học</a>
+                    <a href="https://dungmori.com/ho-tro/huong-dan-cap-moi-mat-khau-cho-tai-khoan" class="item-question huong-dan-cap-moi-mat-khau-cho-tai-khoan">Hướng dẫn cấp mới mật khẩu cho tài khoản</a>
+                    <a href="https://dungmori.com/ho-tro/chinh-sach-gia-han-khoa-hoc-online" class="item-question chinh-sach-gia-han-khoa-hoc-online">Chính sách gia hạn khóa học Online</a>
+                    <a href="https://dungmori.com/ho-tro/huong-dan-nhap-ma-kich-hoat-khoa-hoc-online" class="item-question huong-dan-nhap-ma-kich-hoat-khoa-hoc-online">Hướng dẫn nhập mã kích hoạt khóa học online</a>
+                    <a href="https://dungmori.com/ho-tro/huong-dan-dang-ki-tai-khoan-tren-website" class="item-question huong-dan-dang-ki-tai-khoan-tren-website">Hướng dẫn đăng kí tài khoản trên website</a>
+                </div>
+
+                <div class="main-support-right">
+                    <div class="block-hotro">
+                        <div class="block-content row">
+                            <div class="col-md-7 block-contact">
+                                <form class="form-horizontal" id="form-push-user-opinion" action="/send-mail" method="POST">
+                                    <legend>Liên hệ với chúng tôi</legend>
+                                    <ul class="error-list" id="error-list">
+                                        <li v-for="error in errors">{{ error }}</li>
+                                    </ul>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Họ và tên</label>
+                                        <div class="col-md-8">
+                                            <input type="text" id="fullname" class="form-control" placeholder="" name="fullname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Email</label>
+                                        <div class="col-md-8">
+                                            <input type="email" id="user-email" class="form-control" placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Số điện thoại</label>
+                                        <div class="col-md-8">
+                                            <input type="text" id="phone-number" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Thắc mắc về</label>
+                                        <div class="col-md-8">
+                                            <select name="student[country]" class="form-control" id="option-type">
+                                  <option value="Khóa học online" >Khóa học Online</option>
+                                  <option value="Khóa học offline" >Khóa học Offline</option>
+                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Nội dung thắc mắc</label>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="option-content"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-md-offset-4" id="btn-submit">
+                                            <div class="dmr-btn" v-on:click="sendEmail()">Gửi ý kiến</div>
+                                        </div>
+                                    </div>
+                                    <button type="submit">Gửi</button>
+                                </form>
+                            </div>
+                            <div class="col-md-5 support-right">
+                                <legend>điện thoại</legend>
+                                <p>Tư Vấn về khóa học ONLINE :</p>
+                                <p><strong>0969-868-485</strong></p>
+                                <p>Tư Vấn về khóa học OFFLINE :</p>
+                                <p><strong>0969-856-116</strong></p>
+                                <br/>
+                                <br/>
+                                <legend>Địa chỉ</legend>
+                                <p>Nhà liền kề số 03 VNT TOWER SỐ 19 Nguyễn Trãi, Thanh Xuân, Hà Nội.</p>
+                                <p class="break-line">&nbsp;</p>
+                                <p><em>Giờ làm việc *</em></p>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style="vertical-align:top; width:140px">thứ 2 - thứ 6</td>
+                                            <td>7h00 - 11h30&nbsp;<br> 13h30 - 17h00</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align:top">thứ 7</td>
+                                            <td>8h00 - 12h00&nbsp;<br> 13h00 - 15h00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="loader-area" id="loader-send-email">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="footer">
+        <div class="center-container">
+            <div class="col-md-3 col-sm-12 col general-box" style="padding-top: 20px;">
+                <div style="margin-bottom: 20px;">
+                    <img src="https://dungmori.com/assets/img/new_home/footer_logo.png" />
+                </div>
+                <div>
+                    <a href="https://www.google.com/maps/place/Nh%E1%BA%ADt+Ng%E1%BB%AF+Nihongonomori+Hanoi/@21.0016597,105.8200671,17z/data=!4m5!3m4!1s0x3135ac84ffd5e36f:0x127912f9639dc8d9!8m2!3d21.0016547!4d105.8200617" target="_blank">
+                        Trụ sở: Nhà liền kề số 03 VNT TOWER<br/>
+                        Số́ 19 Nguyễn Trãi, Thanh Xuân, Hà Nội.
+                    </a>
+                </div>
+                <div>
+                    <a href="mailto:duongminhluong89@gmail.com" target="_top">
+                        <p style="margin-bottom: 10px;"><i class="zmdi zmdi-email"></i> duongminhluong89@gmail.com</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="tel:+84969868485"><i class="zmdi zmdi-phone-in-talk"></i>&nbsp;Online: +84.969.868.485</a><br/>
+                    <a href="tel:+84969856116"><i class="zmdi zmdi-phone-in-talk" style="opacity: 0"></i> Offline: +84.969.856.116</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col general-box hiden-mobile">
+                <h3 class="title">VỀ CHÚNG TÔI</h3>
+                <ul class="links">
+                    <li><a href="https://dungmori.com/trang/ve-dungmori"> Về Dũng Mori </a> </li>
+                    <li><a href="https://dungmori.com/trang/chinh-sach-doi-tra"> Chính sách đổi trả </a> </li>
+                    <li><a href="https://dungmori.com/trang/dieu-khoan-su-dung"> Điều khoản sử dụng </a> </li>
+                    <li><a href="https://dungmori.com/trang/chinh-sach-bao-mat"> Chính sách bảo mật thông tin</a> </li>
+                </ul>
+            </div>
+            <div class="col col-md-3 col-sm-12 general-box hiden-mobile">
+                <h3 class="title">Lịch làm việc</h3>
+                <div class="schedule">
+                    <p>Thứ 2 đến thứ 6: <br /> &nbsp; &nbsp; &nbsp; Sáng 7h00 - 11h30<br /> &nbsp; &nbsp; &nbsp; Chiều 13h30 - 17h00
+                    </p>
+                    <p>Thứ 7: <br /> &nbsp; &nbsp; &nbsp; Sáng 8h00 - 12h00<br /> &nbsp; &nbsp; &nbsp; Chiều 13h00 - 15h00
+                    </p>
+                </div>
+            </div>
+
+            <div class="col col-md-3 col-sm-12 contact-box hiden-mobile">
+                <h3 class="title"></h3>
+                <p style="font-weight: bold; font-size: 18px">Công ty cổ phần Dũng Mori</p>
+
+                <p style="font-size: 14px; line-height: 24px; text-align: justify">
+                    Mã số thuế 0106799375, do sở kế hoạch và Đầu tư TP.Hà Nội cấp ngày 24/03/2015<br/> Quyết định thành lập trung tâm ngoại ngữ Dũng Mori, số 3920 do sở đào tạo Hà Nội cấp ngày 9/9/2019<br/> Lần 1: 03/06/2016<br/> Lần 3: 09/09/2019
+                </p>
+            </div>
+        </div>
+        <div class="social-box">
+            <div class="business box">
+                <a href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=59464" class="bocongthuong" target="_blank">
+                    <img class="footer-logo" src="https://dungmori.com/assets/img/bocongthuong.png" alt="dungmori logo" />
+                </a>
+            </div>
+            <div class="mobile-app box">
+                <a href="https://apps.apple.com/us/app/id1486123836" target="_blank" class="mobile-app-button">
+                    <img src="https://dungmori.com/assets/img/nihongozin_ios.png" alt="img" />
+                </a>
+                <a href=" https://play.google.com/store/apps/details?id=com.dungmori.dungmoriapp" target="_blank" class="mobile-app-button">
+                    <img src="https://dungmori.com/assets/img/nihongozin_android.png" alt="img" />
+                </a>
+            </div>
+            <div class="social box">
+                <a href="https://www.facebook.com/dungmori/" target="_blank">
+                    <img src="https://dungmori.com/assets/img/footer-fb.png" alt="img" />
+                </a>
+                <a href="https://www.youtube.com/user/moridung" target="_blank">
+                    <img src="https://dungmori.com/assets/img/footer-youtube.png" alt="img" />
+                </a>
+                <a href="https://www.instagram.com/dung.mori/" target="_blank">
+                    <img src="https://dungmori.com/assets/img/footer-insta.png" alt="img" />
+                </a>
+            </div>
+        </div>
+        <div class="copyright-box">
+            <span>Copyright © 2020 Dung Mori</span>
+        </div>
+    </div>
+
+    <div class="fixed-panel">
+
+
+
+        <a data-fancybox data-animation-duration="300" data-src="#auth-container">
+            <div class="call-btn" onclick="swichTab('login')">
+                <img src="https://dungmori.com/assets/img/messenger.png?" />
+                <p>Chat</p>
+            </div>
+        </a>
+
+        <div class="go-top"><i class="fa fa-sort-asc"></i></div>
+    </div>
+
+
+    <div class="download-store" id="download-store">
+        <h2>Dũng Mori hiện đã có <br/>trên kho ứng dụng</h2>
+        <p>Vui lòng tải app và sử dụng<br/>Để có được trải nghiệm tốt nhất</p>
+        <div class="mobile-app">
+            <a href="https://apps.apple.com/us/app/id1486123836" target="_blank" class="mobile-app-button">
+                <img src="https://dungmori.com/assets/img/nihongozin_ios.png" alt="img" />
+            </a>
+            <a href=" https://play.google.com/store/apps/details?id=com.dungmori.dungmoriapp" target="_blank" class="mobile-app-button">
+                <img src="https://dungmori.com/assets/img/nihongozin_android.png" alt="img" />
+            </a>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        var lastFingerprint = null;
+    </script>
+
+
+
+
+    <script src="https://dungmori.com/plugin/vue/vue.min.js"></script>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <script src="https://dungmori.com/assets/js/app.js?1583829959"></script>
+
+
+    <script type="text/javascript">
+        var enableFIV = false;
+    </script>
+
+
+    <script type="text/x-template" id="ht-template">
+        <div>
+            <select class="ht-select" v-model="selected">
+            <option v-for="opt in options" v-bind:value="opt.value">{{ opt.text }}</option>
+        </select>
+        </div>
+    </script>
+    <script type="text/x-template" id="modal-template">
+        <transition name="v-modal">
+            <div class="v-modal-mask">
+                <div class="v-modal-wrapper" @mousedown="$emit('close')">
+                    <div class="v-modal-container" @mousedown.stop>
+                        <div class="v-modal-header">
+                            <slot name="header">
+
+                            </slot>
+                        </div>
+
+                        <div class="v-modal-body">
+                            <slot name="body">
+
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+    <script type="text/x-template" id="home-preview-template">
+        <div class="courses-linear">
+            <div class="grid-item-course" v-for="lesson in lessons">
+                <a :href="url + '/khoa-hoc/'+ course + '/' + lesson.id + '-' + lesson.SEOurl">
+                    <img class="lazyload course-thumbnail" :src="url + '/cdn/lesson/small/' + lesson.avatar_name" />
+                    <div class="course-detail">
+                        <a class="name" :href="url + '/khoa-hoc/'+ course + '/' + lesson.id + '-' + lesson.SEOurl">
+                            <b style="-webkit-box-orient: vertical;">{{ lesson.name }}</b>
+                        </a>
+                    </div>
+                    <div class="hover-to-play" title="Play">
+                        <span class="play-icon-btn">
+                    <i class="zmdi zmdi-play-circle"></i>
+                </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </script>
+
+
+    <script type="text/x-template" id="home-feedback-template">
+        <div class="student-feedback-slider">
+            <div class="student-feedback-item" v-for="feedback in listFeedbacks">
+                <p class="feeling">{{feedback.content}}</p>
+                <div class="row student-info-box">
+                    <div class="col-lg-3 student-info-avatar">
+                        <img v-if="feedback.user.avatar != null" :src="url + '/cdn/avatar/default/' + feedback.user.avatar" class="student-avatar img-circle" />
+                        <img v-if="feedback.user.avatar == null" :src="url + '/assets/img/default-avatar.jpg'" class="student-avatar img-circle" />
+                    </div>
+                    <div class="col-lg-9 student-info">
+                        <b class="student-name green-text">{{feedback.user.name}}</b>
+                        <span>{{feedback.user_job}}</span><br>
+                        <span><i>-&nbsp{{feedback.current_course}}&nbsp-</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script type="text/x-template" id="course-group-template">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default" v-for="group in listGroups">
+                <div class="panel-heading" role="tab" v-if="group.is_step == true">
+                    <a class="collapsed group-step-item" style="background: #EEE; color: #888; padding: 3px 10px; text-align: center !important; margin-bottom: 0px;">
+                        <span style="width: 95%;">{{ group.name }}</span>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </a>
+                </div>
+                <div class="panel-heading" role="tab" v-if="group.is_step != true">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" :href="'#collapse-' + stateType + group.id" aria-expanded="false">
+                        <strong v-html="printContent(group.name)"></strong>
+                        <span style="width: 5px" class="inBetweener"></span>
+                    </a>
+                </div>
+                <div :id="'collapse-'+ stateType + group.id" class="panel-collapse collapse" role="tabpanel" v-if="group.is_step != true">
+                    <div class="panel-body">
+                        <ul :class="'scroll-items scroll-items-'+ group.id">
+                            <li :class="'lesson-item-'+ lesson.id" v-for="lesson in group.lessons">
+                                <a :href="url +'/khoa-hoc/'+ courseurl.toLowerCase() +'/'+ lesson.id +'-'+ lesson.SEOurl">
+                                    <div v-html="displayCheckMark(lesson.id)"></div>
+                                    <span style="flex: 1">{{ lesson.name }}</span>
+                                    <div v-if="courseurl == 'khoa-n5' || courseurl == 'chuyen-nganh'" v-html="printN5Status(lesson.feature)"></div>
+                                    <div v-if="courseurl != 'khoa-n5' && courseurl != 'chuyen-nganh'" v-html="printLessonStatus(lesson.price_option)"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+
+    <script type="text/x-template" id="course-group-premium">
+
+        <div>
+
+            <div class="search-group-container focus-highlight" v-if="ul == true || courseurl == 'khoa-n5'">
+                <div class="search-input-container">
+                    <div id="search-submit">&nbsp;</div>
+                    <div class="header-search">
+                        <input type="text" v-on:keyup="searchLessons" v-model="key" class="search-input" placeholder="Tìm bài học..." autocomplete="off" />
+                    </div>
+                    <span v-if="key.length > 0" v-on:click="clearSearch"><i class="zmdi zmdi-close-circle"></i></span>
+                </div>
+                <div class="search-result-dropdown" v-if="results.length > 0">
+                    <li class="result-item" v-for="lesson in results">
+                        <a :href="url +'/khoa-hoc/'+ courseurl.toLowerCase() +'/'+ lesson.id +'-'+ lesson.SEOurl">
+
+                            <span v-if="lesson.type == 'docs' || lesson.type == null">
+                        <img class="icon" :src="url + '/assets/img/premium/docb.png'"/>
+                        <img class="active" :src="url + '/assets/img/premium/docw.png'"/>
+                    </span>
+                            <span v-if="lesson.type == 'video'" ">
+                        <img class="icon " :src="url + '/assets/img/premium/videob.png' "/>
+                        <img class="active " :src="url + '/assets/img/premium/videow.png' "/>
+                    </span>
+                    <span v-if="lesson.type=='test' "">
+                            <img class="icon" :src="url + '/assets/img/premium/quizb.png'" />
+                            <img class="active" :src="url + '/assets/img/premium/quizw.png'" />
+                            </span>
+                            <span v-if="lesson.type == 'flashcard'" ">
+                        <img class="icon " :src="url + '/assets/img/premium/fcb.png' "/>
+                        <img class="active " :src="url + '/assets/img/premium/fcw.png' "/>
+                    </span>
+
+                    <div class="lesson-info ">
+                        <span class="lesson-name " v-html="printNameLesson(lesson.is_secret, lesson.price_option, lesson.name) "></span>
+                        <span class="group-name ">{{lesson.group_name}}</span>
+                    </div>
+
+                </a>
+            </li>
+        </div>
+    </div>
+
+    <div v-if="courseurl !='khoa-n4' && courseurl !='khoa-n5' ">
+        <h3>HÀNH TRANG JLPT  <span>Chặng {{currentStage}}</span></h3>
+
+        <ul class="nav nav-tabs stage-container ">
+            <li v-on:click="changeStage(1) " v-bind:class="{ active: (currentStage==1 ) } ">
+                <a >
+                    <img :src="url + '/assets/img/premium/si1.png' "/>
+                    <span>Chặng 1</span>
+                </a>
+                
+            </li>
+            <li v-on:click="changeStage(2) "  v-bind:class="{ active: (currentStage==2 ) } ">
+                <a>
+                    <img :src="url + '/assets/img/premium/si2.png' "/>
+                    <span>Chặng 2</span>
+                </a>
+                
+            </li>
+            <li v-on:click="changeStage(3) "  v-bind:class="{ active: (currentStage==3 ) } ">
+                <a>
+                    <img :src="url + '/assets/img/premium/si3.png' "/>
+                    <span>Chặng 3</span>
+                </a>
+                
+            </li>
+        </ul>
+        <div class="hide-bottom-shadow "></div>
+    </div>
+
+    <div class="progress-container " v-if="ul==t rue || (courseurl=='khoa-n5' && auth==true) ">
+        <div class="total-circlebar ">
+            <h4>Tiến độ cả khóa</h4>
+            <div class="ldBar " id="ldbar-total " data-preset="circle " data-value="0 " stroke-width="10 " data-transition-in></div>
+        </div>
+        <div class="stage-bar " id="stage-bar ">
+        </div>
+    </div>
+
+    <div class="category-container ">
+
+        <div v-if="currentStage==1 " class="guide guide-click " href="#guide-show " data-toggle="collapse ">Hướng dẫn trước khi học</div>
+        <div v-if="currentStage==1 " id="guide-show " class="collapse guide-colapse ">
+            <li :class=" 'lesson-item-'+ lesson.id " v-for="lesson in guideLessons ">
+                <a :href="url + '/khoa-hoc/'+ courseurl.toLowerCase() + '/'+ lesson.id + '-'+ lesson.SEOurl ">
+                    <div class="lesson-name "><i class="fa fa-bookmark "></i> &nbsp; {{ lesson.name }}</div>
+                    <span v-html="displayCheckMark(lesson.id) "></span>
+                </a>
+            </li>
+        </div>
+        <div v-if="currentStage !=1 || index> 0" v-for="(ct, index) in listCategories" :id="'ct-focus-'+ ct.id" v-on:click="focusCategory(index)" v-bind:class="[ct.id == pickedCategory.id ? 'p-item active' : 'p-item']">
+                            <div v-bind:class="[ct.type == '1' ? 'cate-item' : 'cate-item special']" v-bind:style="(listCategories.length == 2) ? 'width: 160px' : ''">
+                                <span v-show="ct.type != 2">{{ct.title}}</span><br/>
+                                <img :src="url+ '/cdn/lesson_category/'+ ct.icon" />
+
+                            </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default" v-for="group in listGroups">
+                    <div class="panel-heading" role="tab" v-if="group.is_step == true">
+                        <a class="collapsed group-step-item" style="background: #EEE; color: #888; padding: 3px 10px; text-align: center !important; margin-bottom: 0px;">
+                            <span style="width: 95%;">{{ group.name }}</span>
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </a>
+                    </div>
+                    <div class="panel-heading" role="tab" v-if="group.is_step != true">
+                        <a :id="'click-group-'+ group.id" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" :href="'#collapse-' + group.id" aria-expanded="false">
+
+                            <strong v-bind:style="(group.lesson_category_id == 42 || group.lesson_category_id == 46) ? 'text-align:left' : ''" v-html="printContent(group.name)"></strong>
+                        </a>
+                    </div>
+                    <div :id="'collapse-'+ group.id" class="panel-collapse collapse" role="tabpanel" v-if="group.is_step != true">
+                        <div class="panel-body">
+                            <ul :class="'scroll-items scroll-items-'+ group.id">
+                                <li :class="'lesson-item-'+ lesson.id" v-for="lesson in group.lessons">
+                                    <a :href="url +'/khoa-hoc/'+ courseurl.toLowerCase() +'/'+ lesson.id +'-'+ lesson.SEOurl">
+
+                                        <span v-if="lesson.type == 'docs' || lesson.type == null">
+                                    <img class="icon" :src="url + '/assets/img/premium/docb.png'"/>
+                                    <img class="active" :src="url + '/assets/img/premium/docw.png'"/>
+                                </span>
+                                        <span v-if="lesson.type == 'video'" ">
+                                    <img class="icon " :src="url + '/assets/img/premium/videob.png' "/>
+                                    <img class="active " :src="url + '/assets/img/premium/videow.png' "/>
+                                </span>
+                                <span v-if="lesson.type=='test' "">
+                                        <img class="icon" :src="url + '/assets/img/premium/quizb.png'" />
+                                        <img class="active" :src="url + '/assets/img/premium/quizw.png'" />
+                                        </span>
+                                        <span v-if="lesson.type == 'flashcard'" ">
+                                    <img class="icon " :src="url + '/assets/img/premium/fcb.png' "/>
+                                    <img class="active " :src="url + '/assets/img/premium/fcw.png' "/>
+                                </span>
+
+                                <div class="lesson-name " v-html="printNameLesson(lesson.is_secret, lesson.price_option, lesson.name) "></div>
+                                <span class="hoc-thu " v-html="printLessonStatus(lesson.price_option) "></span>
+                                <span v-html="displayCheckMark(lesson.id) "></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+
+
+<script type="text/x-template " id="comment-template ">
+    <div class="list-comments " :style=" 'background-color:'+ background ">
+
+        <div class="input-comment-container " v-if="meid !=n ull ">
+            <p><b>Đăng bình luận</b></p>
+            <div class="form_action ">
+                <img v-if="avatar==n ull || avatar=='' " class="me-avatar " :src="url + '/assets/img/default-avatar.jpg' ">
+                <img v-if="avatar !=n ull && avatar !='' " class="me-avatar " :src="url + '/cdn/avatar/small/'+ avatar ">
+                <textarea data-emoji-picker="true " class="input-comment " id="comment-content " rows="1 " placeholder="comment... "></textarea>
+                <span class="pick-image " data-toggle="tooltip " data-placement="bottom " title="Dung lượng ảnh tối đa 3MB, Định dạng cho phép: jpg, png, jpeg, gif ">
+                <i class="zmdi zmdi-camera "></i>
+                <form class="form-pick-image " id="cmt-attachment-form ">
+                    <input type='file' id="commentImagePicked " name="commentImagePicked " @change="previewImage " accept=".png, .jpg, .jpeg, .gif " />
+                </form>
+            </span>
+                <span class="post-comment-btn " v-on:click="postNewComment ">Đăng</span>
+                <div class="preview-image " id="preview-image-cmt "></div>
+            </div>
+        </div>
+
+        <li v-if="showLoadingNewComment==t rue " class="comment-item " style='text-align: center;'>loading...</li>
+
+        <li class="comment-item " v-for="cmt in listComments " :id=" 'cmt-item-'+ cmt.id ">
+            <a v-if="cmt.user_id==0 " class="pull-left avatar-container " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(cmt.user_id) ">
+                <img class="avatar " :src="url + '/assets/img/dmr-square-logo.png' ">
+                <i class="zmdi zmdi-check-circle "></i>
+            </a>
+            <a v-if="cmt.user_id !=0 " class="pull-left avatar-container " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(cmt.user_id) ">
+                <img v-if="cmt.avatar==n ull || cmt.avatar=='' " class="avatar " :src="url + '/assets/img/default-avatar.jpg' ">
+                <img v-if="cmt.avatar !=n ull && cmt.avatar !='' " class="avatar " :src="url + '/cdn/avatar/small/'+ cmt.avatar ">
+            </a>
+            <div class="comment-content ">
+                <p class="name ">
+                    <b class="red " v-if="cmt.user_id==0 " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(0) ">Dũng Mori</b>
+                    <b class="red " v-if="cmt.user_id !=0 " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(cmt.user_id) ">
+                        {{cmt.name}}
+                    </b>
+                    <span v-html="printInfo(cmt.content) "></span>
+                </p>
+                <p v-if="cmt.img !=n ull " class="preview-image ">
+                    <a class="popup-preview-image " :href="url + '/cdn/comment/default/'+ cmt.img " data-fancybox>
+                        <img class="preview-thumbnail " :src="url + '/cdn/comment/small/'+ cmt.img "/>
+                    </a>
+                </p>
+                <p class="comment-action ">
+                    <a v-if="cmt.replies.length !=0 " class="load-more-reply " role="button " data-toggle="collapse " :href=" '#reply-'+ cmt.id " aria-expanded="false " :aria-controls=" 'reply-'+ cmt.id ">
+                        <i class="zmdi zmdi-comments "></i> {{cmt.replies.length}} phản hồi
+                    </a>
+                    <span v-if="cmt.replies.length==0 " class="answer " data-toggle="collapse " :id=" 'answer-reply-'+ cmt.id " :href=" '#reply-'+ cmt.id " aria-expanded="false " :aria-controls=" 'reply-'+ cmt.id ">Trả lời</span> •
+                    <span class="time ">{{ prettyDate(cmt.created_at) }}</span>
+                </p>
+                <div class="reply-container ">
+                    <div class="collapse " :id=" 'reply-'+ cmt.id ">
+
+                        <div class="child-comment-item " v-for="(childCmt, index) in cmt.replies " :id=" 'reply-item-'+ childCmt.id ">
+                            <a v-if="childCmt.user_id==0 " class="pull-left avatar-container " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(0) ">
+                                <img class="avatar " :src="url + '/assets/img/dmr-square-logo.png' ">
+                                <i class="zmdi zmdi-check-circle "></i>
+                            </a>
+                            <a v-if="childCmt.user_id !=0 " class="pull-left avatar-container " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(childCmt.user_id) ">
+                                <img v-if="childCmt.avatar==n ull || childCmt.avatar=='' " class="avatar " :src="url + '/assets/img/default-avatar.jpg' ">
+                                <img v-if="childCmt.avatar !=n ull && childCmt.avatar !='' " class="avatar " :src="url + '/cdn/avatar/small/'+ childCmt.avatar ">
+                            </a>
+                            <div class="comment-content ">
+                                <p class="child-name ">
+                                    <b class="red " v-if="childCmt.user_id==0 " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(0) ">Dũng Mori </b>
+                                    <b class="red " v-if="childCmt.user_id !=0 " data-fancybox data-src="#user-profile-popup " href="javascript:; " v-on:click="fetchUserInfo(childCmt.user_id) ">
+                                        {{childCmt.name}}
+                                    </b>
+                                    <span :id=" 'child-comment-content-'+ childCmt.id " v-html="printInfo(childCmt.content) "></span>
+                                </p>
+
+                                <p v-if="childCmt.img !=n ull " class="preview-image ">
+                                    <a class="popup-preview-image " :href="url + '/cdn/comment/default/'+ childCmt.img " data-fancybox>
+                                        <img class="preview-thumbnail " :src="url + '/cdn/comment/small/'+ childCmt.img "/>
+                                    </a>
+                                </p>
+
+                                <p class="child-comment-action ">
+                                    <span class="time ">{{ prettyDate(childCmt.created_at) }}</span>
+                                    <span v-if="adminActive==t rue && childCmt.created_at !=c hildCmt.updated_at "> &nbsp; Đã sửa</span>
+                                </p>
+                            </div>
+
+                            <!-- <span class="admin-edit-pen " v-if="adminActive==t rue && childCmt.user_id==0 " data-fancybox data-src="#edit-cmt-popup " href="javascript:; "
+                            v-on:click="editAdminComment(childCmt.id, childCmt.content) "
+                            >sửa</span> -->
+                            <span v-if="meid==c hildCmt.user_id " class="delete-comment " v-on:click="delReply(childCmt.id) "><i class="zmdi zmdi-close-circle "></i> xóa</span>
+                        </div>
+
+                        <div class="reply-form " v-if="meid !=n ull ">
+                            <img v-if="avatar==n ull || avatar=='' " class="me-avatar " :src="url + '/assets/img/default-avatar.jpg' ">
+                            <img v-if="avatar !=n ull && avatar !='' " class="me-avatar " :src="url + '/cdn/avatar/small/'+ avatar ">
+                            <textarea data-emoji-picker="true " class="input-comment " :id=" 'reply-input-content-'+ cmt.id " rows="1 " placeholder="comment... "></textarea>
+
+                            <span class="pick-image " data-toggle="tooltip " data-placement="bottom " title="Dung lượng ảnh tối đa 3MB, Định dạng cho phép: jpg, png, jpeg, gif ">
+                                <i class="zmdi zmdi-camera "></i>
+                                <form class="form-pick-image " :id=" 'cmt-attachment-form-'+ cmt.id ">
+                                    <input type='file' :id=" 'commentImagePicked'+ cmt.id " name="commentImagePicked " @change="previewImageReply " accept=".png, .jpg, .jpeg, .gif "/>
+                                </form>
+                            </span>
+
+                            <span class="post-comment-btn " v-on:click="postNewAnswer(cmt.id) ">Đăng</span>
+                            <div class="preview-image " :id=" 'preview-image-cmt-'+ cmt.id "></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <span v-if="meid==c mt.user_id " class="delete-comment " v-on:click="delComment(cmt.id) "><i class="zmdi zmdi-close-circle "></i> xóa</span>
+        </li>
+
+        <!-- hiển thị loading -->
+        <div v-if="theEnd==f alse " class="load-more-comment " v-on:click="fetchMoreComments ">
+            <span v-show="showLoading==f alse ">Tải thêm bình luận</span>
+            <img class="loading-icon " v-show="showLoading==t rue " :src="url + '/assets/img/loading.gif' "/>
+        </div>
+        <div v-if="theEnd==t rue " class="end-of-list ">Hết danh sách</div>
+
+        <!-- hiển thị profile -->
+        <div style="display: none; " id="user-profile-popup " class="user-profile-popup ">
+            <div class="user-profile-container " v-if="showLoadingUser==f alse ">
+                <div class="loading-circle " style="margin-top: 150px; "></div>
+            </div>
+            <div class="user-profile-container " v-if="showLoadingUser==t rue ">
+                <div v-if="currentUser.id==0 " class="cover-container ">
+                    <img class="user-avatar " :src="url + '/assets/img/dmr-square-logo.png' "/>
+                </div>
+                <div v-if="currentUser.id !=0 " class="cover-container ">
+                    <img v-if="currentUser.avatar==n ull || currentUser.avatar=='' " class="user-avatar " :src="url + '/assets/img/default-avatar.jpg' ">
+                    <img v-if="currentUser.avatar !=n ull && currentUser.avatar !='' " class="user-avatar " :src="url + '/cdn/avatar/default/'+ currentUser.avatar ">
+                </div>
+                <table class="table " id="user-info-table ">
+                    <tbody>
+                    <tr v-if="currentUser.name !=n ull && currentUser.name !='' ">
+                        <td class="user-form-item desc " style="width: 130px; ">Họ và Tên</td>
+                        <td class="user-form-item ">
+                            <b>{{currentUser.name}}</b>
+                            <i v-if="currentUser.id==0 " style="color: #578fff; " class="zmdi zmdi-check-circle " data-toggle="tooltip " data-placement="left " title="Tài khoản đã xác thực "></i>
+                        </td>
+                    </tr>
+                    <tr v-if="currentUser.email !=n ull && currentUser.email !='' ">
+                        <td class="user-form-item desc ">Email</td>
+                        <td class="user-form-item "><span class="info-item-email ">{{printPrivateEmail(currentUser.email)}}</span></td>
+                    </tr>
+                    <tr v-if="currentUser.username !=n ull && currentUser.username !='' ">
+                        <td class="user-form-item desc ">Tên đăng nhập</td>
+                        <td class="user-form-item "><span>{{currentUser.username}}</span></td>
+                    </tr>
+                    <tr v-if="currentUser.birthday !=n ull && currentUser.birthday !='' ">
+                        <td class="user-form-item desc ">Ngày sinh</td>
+                        <td class="user-form-item ">{{currentUser.birthday}}</td>
+                    </tr>
+                    <tr v-if="currentUser.phone !=n ull && currentUser.phone !='' ">
+                        <td class="user-form-item desc ">Số điện thoại</td>
+                        <td class="user-form-item "><span>{{printPrivatePhone(currentUser.phone)}}</span></td>
+                    </tr>
+                    <tr v-if="currentUser.nihongo !=n ull && currentUser.nihongo !='' ">
+                        <td class="user-form-item desc ">Trình tiếng Nhật</td>
+                        <td class="user-form-item ">{{currentUser.nihongo}}</td>
+                    </tr>
+                    <tr v-if="currentUser.address !=n ull && currentUser.address !='' ">
+                        <td class="user-form-item desc ">Địa chỉ</td>
+                        <td class="user-form-item " style="padding-right:0; "><span>{{currentUser.address}}</span></td>
+                    </tr>
+                    <tr v-if="currentUser.country !=n ull && currentUser.country !='' ">
+                        <td class="user-form-item desc ">Quốc gia</td>
+                        <td class="user-form-item ">{{currentUser.country}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <form id="edit-cmt-popup " action=" " method="post ">
+            <h4>Sửa nội dung</h4>
+            <input type="hidden " id="edit-comment-id "/>
+            <p><textarea data-emoji-picker="true " class="edit-comment-area form-control " id='edit-comment-area' placeholder="comment... "></textarea></p>
+            <p class="mb-0 text-right ">
+                <span class="edit-comment-btn-save " v-on:click="saveAdminComment() ">Lưu</span>
+                <span class="edit-comment-btn-cancel " v-on:click="cancelAdminComment() ">Hủy</span>
+            </p>
+        </form>
+
+    </div>
+</script>
+
+<script type="text/x-template " id="mixed-test-template ">
+    <div class="quiz__container " v-if="!loading ">
+        <div class="quiz__header ">
+            <div class="quiz__header--progress " v-bind:style="{gridTemplateColumns: 'repeat(' + questions.length + ', minmax(20px, 1fr))'} " v-if="state=='testing' ">
+                                    <div
+                            class="quiz__header--progress-block "
+                            v-for="(question, index) in questions "
+                            v-bind:style="{color: question.answered ? (question.correct ? '#41A336' : '#d10000') : '#ccc', cursor: question.answered ? 'pointer' : 'default'} "
+                            @click="question.answered ? (current=i ndex) : null "
+                    >
+                        <span class="quiz__header--progress-number ">{{ index + 1 }}</span>
+                        <transition name="ltr " tag="div ">
+                            <div v-bind:style="{color: question.answered ? (question.correct ? '#41A336' : '#d10000') : '#1450db'} " class="quiz__header--progress-flag " v-if="current==i ndex "><i class="fa fa-sort-down "></i></div>
+                        </transition>
+                    </div>
+                            </div>
+        </div>
+        <div class="quiz__body " v-if="loading "></div>
+        <div class="quiz__body " v-if="questions && !loading ">
+            <div class="quiz__body--title d-flex justify-content-space-between align-items-center " v-if="state=='testing' ">
+                <span v-html="currentQuestion.section " class="quiz__body--title-content "></span>
+                <div style="display: flex; flex-flow: column; align-items: flex-end ">
+                    <div>Autoplay</div>
+                    <label class="checkbox__switch ">
+                        <input type="checkbox " v-model="autoplay " name="autoPlay " @change="setAutoplay(autoplay) "/>
+                        <span class="checkbox__slider checkbox__round "></span>
+                    </label>
+                </div>
+            </div>
+            <div class="quiz__body--slider " v-if="state=='testing' ">
+                <transition-group name="fade " tag="div " v-if="!loading ">
+                    <div class="quiz__body--slide " v-for="(question, index) in questions " v-if="!loading && current==i ndex " :key="question.id ">
+                        <div class="quiz__body--content ">
+                            <div class="quiz__body--content-question mb-5 ">
+                                <div>
+                                    <span v-if="question.question_audio " class="quiz__circle-icon mr-5 a-cursor-pointer text-success " @click="playAudio(question.question_audio, 'playingQuestionAudio') ">
+                                    <i class="zmdi " :class="{ 'zmdi-volume-up': playingMp3 && playingQuestionAudio, 'zmdi-volume-off': !playingMp3 || !playingQuestionAudio} "></i>
+                                </span>
+                                </div>
+                                <span v-if="question.type==1 0 " v-html="question.mask "></span>
+                                <span v-if="question.type==1 1 " v-html="question.blocks.join( ' ') "></span>
+                            </div>
+                            <div class="quiz__body--content-answers " v-bind:style="{ 'gridTemplateColumns': question.longgggg ? '1fr' : '1fr 1fr'} ">
+                                <span
+                                        v-if="question.type==1 0 "
+                                        v-bind:style="{ 'backgroundColor': !question.answered ? (question.currentAnswer.id==a nswer.id ? '#e4fce7' : '#fff') : (question.currentAnswer.id==a nswer.id ? (answer.id==q uestion.answer.id ? '#e4fce7' :
+                                            '#FFEFEF') : (answer.id==q uestion.answer.id ? '#e4fce7' : '#fff')), 'borderColor': (question.answered && (question.currentAnswer.id==a nswer.id) && answer.id !=q uestion.answer.id) ? 'red' : '#7fbd18'} "
+                                        class="quiz__body--content-answer " v-for="(answer, index) in question.answers " @click="!question.answered && setAnswer(question, answer) ">{{ index + 1 }}. {{ answer.value }}</span>
+                                <span
+                                        v-if="question.type==1 1 "
+                                        v-bind:style="{ 'backgroundColor': !question.answered ? ((question.currentAnswers.indexOf(answer.id)> -1) ? '#e4fce7' : '#fff') : (question.currentAnswer.id == answer.id
+                                        ? (answer.id == question.answer.id ? '#e4fce7' : '#FFEFEF') : (answer.id == question.answer.id ? '#e4fce7' : '#fff')), 'borderColor': (question.answered && (question.currentAnswer.id == answer.id) && answer.id !=
+                                        question.answer.id) ? 'red' : '#7fbd18'}" class="quiz__body--content-answer" v-for="(answer, index) in question.answers" @click="!question.answered && setAnswer(question, answer)">{{ index + 1 }}. {{ answer.value
+                                        }}
+                                        </span>
+                        </div>
+                    </div>
+                    <div class="quiz__body--navigation">
+                        <transition name="hint">
+                            <div v-bind:style="{backgroundColor: question.correct ? '#e4fce7' : '#FFEFEF', color: question.correct ? '#41A336' : '#CC3333'}" class="quiz__body--navigation-hint" v-if="question.answered">
+                                <div class="d-flex flex-column">
+                                    <span class="text-bold">Đáp án</span>
+                                    <span v-if="question.type == 10">{{ question.answer.value }}</span>
+                                    <span v-if="question.type == 11" v-html="question.answerBlocks.join(' ')"></span>
+                                </div>
+                                <div>
+                                    <span v-if="question.answer_audio" @click="playAudio(question.answer_audio, 'playingAnswerAudio')" class="quiz__circle-icon a-cursor-pointer">
+                                            <i class="zmdi" :class="{'zmdi-volume-up': playingMp3 && playingAnswerAudio, 'zmdi-volume-off': !playingMp3 || !playingAnswerAudio}"></i>
+                                        </span>
+                                </div>
+                            </div>
+                        </transition>
+
+                        <div class="quiz__body--navigation-button">
+                            <span ref="navBtn" v-if="!question.answered && question.type == 10" class="quiz__button" v-bind:style="{'backgroundColor': !question.currentAnswer.id ? 'gray': 'gray', 'cursor': question.currentAnswer.id ? 'pointer' : 'default'}">
+                                    Câu tiếp theo &nbsp; <i class="fa fa-angle-right fa-lg"></i></span>
+                            <span ref="navBtn" v-if="!question.answered && question.type == 11" v-on:click="checkQuestion(question)" class="quiz__button" v-bind:style="{'backgroundColor': !question.currentAnswers.includes(null) ? '#41A336': 'gray', 'cursor': question.currentAnswers.length == question.answers.length ? 'pointer' : 'default'}">
+                                    Kiểm tra &nbsp; <i class="fa fa-angle-right fa-lg"></i></span>
+                            <span ref="navBtn" v-if="question.answered && current < questions.length - 1 && question.type == 10" v-on:click="nextQuestion" class="quiz__button" v-bind:style="{'backgroundColor': question.answered && !question.correct ? '#CC3333' : '#41A336'}">
+                                    Câu tiếp theo &nbsp; <i class="fa fa-angle-right fa-lg"></i></span>
+                            <span ref="navBtn" v-if="question.answered && current < questions.length - 1 && question.type == 11" v-on:click="nextQuestion" class="quiz__button" v-bind:style="{'backgroundColor': question.answered && !question.correct ? '#CC3333' : '#41A336'}">
+                                    Câu tiếp theo &nbsp; <i class="fa fa-angle-right fa-lg"></i></span>
+                            <span ref="navBtn" v-if="question.answered && current == questions.length - 1" v-on:click="showResult" class="quiz__button" v-bind:style="{'backgroundColor': question.answered && !question.currentAnswer.grade ? '#CC3333' : '#41A336'}">
+                                    Hoàn thành &nbsp; <i class="fa fa-angle-right fa-lg"></i></span>
+                        </div>
+                    </div>
+                </div>
+                </transition-group>
+            </div>
+            <div class="quiz__body--result" v-if="state == 'finished'">
+                <div class="quiz__body--result-card" v-if="!viewHistory">
+                    <div class="quiz__body--result-card-left">
+
+
+
+                        <img width="200px" src="https://dungmori.com/assets/img/mori-quiz-result.png?1594777921" />
+                    </div>
+                    <div class="quiz__body--result-card-right">
+                        <div style="font-size: 25px; font-weight: bold; text-align: center">CHÚC MỪNG</div>
+                        <div style="font-size: 16px; line-height: 27px; text-align: center">Bạn vừa làm xong bài quiz</div>
+                        <div style="font-size: 16px; line-height: 27px; text-align: center">Cùng xem lại kết quả nhé!</div>
+                    </div>
+                </div>
+                <div class="quiz__body--result-history" v-if="viewHistory">
+                    <div class="quiz__body--result-history-title">
+                        <i class="fa fa-history"></i> Lịch sử thi
+                    </div>
+                    <div class="quiz__body--result-history-table">
+                        <table class="table table-sm table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Điểm thi</th>
+                                    <th scope="col">Ngày thi</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(result, index) in results">
+                                    <td>{{ index + 1 }}</td>
+                                    <td>{{ result.grade }}/{{ result.total_grade }}</td>
+                                    <td>{{ result.created_at | dateTime }}</td>
+                                    <td><span :class="{'text-success' : result.passed, 'text-danger': !result.passed}">{{ result.passed | isPassed}}</span></td>
+                                    <td>
+                                        <span class="text-success a-cursor-pointer" @click="showSelectedResult(result)">Xem bài làm</span>
+                                        <span>|</span>
+                                        <span class="text-danger a-cursor-pointer" @click="deleteResult(result)">Xoá</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <modal v-if="showOldResult" @close="closeOldResult">
+                    <div slot="header" class="d-flex justify-content-space-between">
+                        <h3>Chi tiết bài kiểm tra</h3><span class="a-cursor-pointer" @click="showOldResult = false"><i class="fa-lg fa fa-times"></i></span></div>
+                    <div slot="body">
+                        <div>
+                            <table class="table table-bordered table-hover tc-table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Kết quả</th>
+                                        <td>{{ selectedResult.passed | isPassed }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Điểm của bạn</th>
+                                        <td>{{ selectedResult.grade | mark}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Điểm đạt yêu cầu</th>
+                                        <td>{{ lesson.pass_marks | mark }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Điểm tối đa</th>
+                                        <td>{{ selectedResult.total_grade | mark}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Thời gian thi</th>
+                                        <td>{{ selectedResult.created_at | dateTime }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="quiz__body--result-questions">
+                                <div class="quiz__body--result-question" v-for="question in resultQuestions">
+                                    <div><span v-html="question.mask"></span><span class="a-cursor-pointer text-success" v-if="question.answer_audio" @click="playAudio(question.answer_audio, 'playingAnswerAudio')"><i class="zmdi zmdi-volume-up"></i></span></div>
+                                    <div class="quiz__body--result-answers" v-if="question.type == 10">
+                                        <div v-for="(answer, index) in question.answers" class="pl-5" :class="{'quiz__body--result-answer-correct': answer.grade > 0, 'quiz__body--result-answer-wrong': selectedResult.data[question.id] == answer.id && answer.grade == 0}">
+                                            <div style="display: inline-block">
+                                                <input type="radio" :checked="selectedResult.data[question.id] == answer.id" onclick="this.checked = false" />&nbsp; <span>{{ index + 1 }}. </span><span v-html="answer.value"></span><span>{{ answer.grade > 0 ? '(Đúng)' : (selectedResult.data[question.id] == answer.id ? '(Sai)' : '') }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quiz__body--result-answers-gap" v-if="question.type == 11">
+                                        <div v-for="(answer, index) in question.answers">
+                                            <span class="quiz__body--result-answer-correct">
+                                                <span>{{ index + 1 }}.</span>&nbsp;<span v-html="answer.value"></span>
+                                            </span>
+                                        </div>
+                                        <div v-for="(answer, index) in question.sortedAnswers">
+                                            <span :class="{'quiz__body--result-answer-correct': answer.id === question.answers[index].id, 'quiz__body--result-answer-wrong': answer.id !== question.answers[index].id}">
+                                                <span><i class="fa" :class="{'fa-check': answer.id === question.answers[index].id, 'fa-times': answer.id !== question.answers[index].id}"></i></span>&nbsp;
+                                            <span v-html="answer.value"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center"><span>-- Hết --</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </modal>
+                <div class="quiz__body--result-button">
+                    <span class="btn btn-md btn-success" @click="reviewAnswer"><i class="fa fa-eye"></i>  Xem lại bài làm</span>
+                    <span class="btn btn-md btn-success" v-if="viewHistory" @click="viewHistory = 0"><i class="fa fa-calendar"></i>  Kết quả</span>
+                    <span class="btn btn-md btn-success" v-if="!viewHistory" @click="viewHistory = 1"><i class="fa fa-calendar"></i>  Lịch sử làm bài</span>
+                    <span class="btn btn-md btn-success" @click="testAgain"><i class="fa fa-undo"></i> Làm lại</span>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <iframe src="" allow="autoplay" id="audio" style="display: none"></iframe>
+    </script>
+
+    <script type="text/x-template" id="video-modal-template">
+        <div class="video__js--overlay-quiz-wrapper">
+            <div class="video__js--overlay-quiz-timer" v-if="question.type === 1">
+                <pie-timer :timeStart="modalQuestion.time_start" :length="modalQuestion.length" :aLength="modalQuestion.a_length" :currentTime='currentTime' v-on:timeUp="timeUp()" v-if="modalQuestion.modal && !question.time_up"></pie-timer>
+            </div>
+            <div class="video__js--overlay-quiz-content">
+                <div class="video__js--overlay-quiz-qa">
+                    <div v-if="modalQuestion.content" class="video__js--overlay-question" v-html="modalQuestion.content"></div>
+                    <div class="video__js--overlay-answers" :class="{
+                 'h-100': question.type === 1 && modalQuestion.answers.length === 4,
+                 'h-50': question.type === 1 && modalQuestion.answers.length < 4,
+                 'grid-3-1': question.type === 1 && modalQuestion.answers.length % 3 == 0,
+                 'grid-2-1': question.type === 1 && modalQuestion.answers.length % 2 == 0
+                 }">
+                        <div class="video__js--overlay-answer" v-for="(answer, index) in modalQuestion.answers" :key="answer.key" @click="selectAnswer(answer, modalQuestion)" :class="{'video__js--overlay-answer-blink' : modalQuestion.time_up && answer.grade}" :style="{background: !modalQuestion.time_up ? (answer.selected ? '#F3933D' : (question.type === 2 ? 'rgba(0, 0, 0, 0.7)' : '#7ECADE')) : (answer.grade ? '#93CA8C' : (answer.selected ? '#F3933D' : (question.type === 2 ? 'rgba(0, 0, 0, 0.7)' : '#7ECADE')))}">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <span class="d-flex justify-content-center align-items-center" style="font-size: 1em; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; width: 1.3em; height: 1.3em; border-radius: 50%; background: rgba(0,0,0,0.3)">{{ index + 1 }}</span>
+                            </div>
+                            <span style="text-align: justify; padding: 5px"> {{answer.value}}</span>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="video__js--overlay-navigation" v-if="modalQuestion.type === 2">
+                    <span class="video__js--overlay-navigation-button" @click="triggerCloseModal">{{ question.time_up ? 'Tiếp tục' : 'Bỏ qua' }}</span>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="pie-timer-template">
+        <div id="countdown">
+            <div id="countdown-number">{{ timeCount | floorTime}}</div>
+            <svg>
+            <circle :style="{animationDuration: remainingLength + 's'}" r="18" cx="20" cy="20"></circle>
+        </svg>
+        </div>
+    </script>
+    <script type="text/x-template" id="share4gift__inner">
+        <div class="share4gift__inner">
+            <div class="share4gift__main">
+                <div class="share4gift__tutorial" v-if="stage == 'tutorial'">
+                    <div class="share4gift__carousel">
+                        <div class="share4gift__title" style="margin: 50px 0 10px 0">
+                            <div v-if="tutorialIndex == 0">
+                                <p>Đăng bài chia sẻ cảm nhận về Dũng Mori </p>
+                                <p>lên mạng xã hội của bạn ở chế độ <span style="color: #41A337">công khai</span> </p>
+                                <p>cùng hashtag <span style="color: #2F80ED">#dungmori</span></p>
+                            </div>
+                            <div v-if="tutorialIndex == 1">
+                                <p>Dán đường dẫn vào phần nhận quà</p>
+                                <p>hiện ra sau đây</p>
+                            </div>
+                            <p style="color: #EB5757; font-size: 13px;margin-top: 10px;font-weight: 400">*Chương trình không bao gồm cho khoá EJU và KAIWA</p>
+                        </div>
+                        <div style="padding: 10px; display: flex; justify-content: center; align-items: center;width: 100%;">
+                            <lottie-player autoplay loop mode="normal" style="text-align: center" :style="{width: tutorialIndex == 2 ? '60%' : '94%'}">
+                            </lottie-player>
+                        </div>
+
+                    </div>
+                    <div class="share4gift__tutorial__dots">
+
+                    </div>
+                </div>
+                <div class="share4gift__form" v-if="stage == 'submit'">
+                    <div class="share4gift__title" style="margin: 50px 0">
+                        <p>Bước cuối cùng</p>
+                        <p>Dán link bài viết chia sẻ và ấn nhận quà</p>
+                    </div>
+                    <input v-model="postUrl" class="share4gift__input" :class="{'share4gift__input--error': error.hasOwnProperty('postUrl')}" placeholder="Dán link bài viết vào đây" />
+                    <span class="share4gift__input--error-label" v-if="error.hasOwnProperty('postUrl')">Bạn chưa điền link bài viết.</span>
+
+                    <span class="share4gift__input--error-label" v-if="error.hasOwnProperty('not_auth')">Bạn chưa đăng nhập. Hãy đăng nhập để hoàn tất nhé!</span>
+                    <lottie-player mode="bounce" src="https://assets4.lottiefiles.com/datafiles/zc3XRzudyWE36ZBJr7PIkkqq0PFIrIBgp4ojqShI/newAnimation.json" style="width: 400px;" loop autoplay></lottie-player>
+                </div>
+                <div class="share4gift__congrats" v-if="stage == 'congrats'">
+                    <div class="share4gift__title" style="margin: 50px 0">
+                        <p>Thành công!</p>
+                        <p>Bài viết sẽ được duyệt trong thời gian ngắn</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <lottie-player mode="bounce" src="https://assets4.lottiefiles.com/datafiles/zc3XRzudyWE36ZBJr7PIkkqq0PFIrIBgp4ojqShI/newAnimation.json" style="width: 400px;" loop autoplay></lottie-player>
+                    </div>
+                </div>
+            </div>
+            <div class="share4gift__navigation" :class="{'grid-1': stage == 'congrats'}">
+                <span id="share4gift__btn--skip" v-if="stage == 'tutorial'" @click="skipTutorial" class="share4gift__btn share4gift__btn--white">Bỏ qua</span>
+                <span id="share4gift__btn--next" v-if="stage == 'tutorial'" @click="nextTutorial" class="share4gift__btn share4gift__btn--green">Tiếp tục</span>
+                <span id="share4gift__btn--skip" v-if="stage == 'submit'" v-on="!submitLoading ? { click: cancel } : {}" class="share4gift__btn share4gift__btn--white">Đóng</span>
+                <span id="share4gift__btn--next" v-if="stage == 'submit'" v-on="!submitLoading ? { click: submit } : {}" class="share4gift__btn share4gift__btn--green" :class="{'disabled': submitLoading}">
+                        <i v-if="submitLoading" class="fa fa-spinner fa-pulse mr-4"></i>
+                        Nhận quà
+                    </span>
+                <span id="share4gift__btn--next" v-if="stage == 'congrats'" v-on="!submitLoading ? { click: cancel } : {}" class="share4gift__btn share4gift__btn--green">Xác nhận</span>
+            </div>
+        </div>
+    </script>
+
+
+
+    <script src="https://unpkg.com/driver.js/dist/driver.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/driver.js/dist/driver.min.css">
+
+
+    <script src="https://dungmori.com/plugin/vanilla-emoji-picker/emojiPicker.js?1597223275"></script>
+
+
+    <script src="https://dungmori.com/plugin/moment/moment.js?1583459520"></script>
+    <script type="text/javascript">
+        moment.locale('vi')
+    </script>
+
+
+    <script src="https://dungmori.com/assets/js/components.js?1605757412"></script>
+
+
+    <script src="https://dungmori.com/assets/js/GVuZ3RoKCk.js?1541129437"></script>
+
+    <script>
+        $(".ho-tro").addClass("active");
+    </script>
+    <script src="./js/suport-email.js"></script>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11&appId=1548366118800829';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <script src="https://dungmori.com/assets/js/counter.js?1583459520"></script>
+    <script type="text/javascript" src="https://dungmori.com/assets/js/modal.js?1594777921"></script>
+
+
+    <script type="text/javascript">
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-98604763-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- Hotjar Tracking Code for www.dungmori.com -->
+    <script>
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 1928619,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131128751-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-131128751-4');
+    </script>
+
+    <script>
+        (function() {
+            var ta = document.createElement('script');
+            ta.type = 'text/javascript';
+            ta.async = true;
+            ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BPU67QVC2JVVVND7OQEG';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ta, s);
+        })();
+    </script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <%- include('../partials/head'); %>
+        <style>
+            .main {
+                margin-top: 100px;
+            }
+        </style>
+
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <input type="hidden" id="csrf_token" value="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+
+    <main>
+        <div class="main">
+            <div class="main-center">
+                <%- include('../partials/profile'); %>
+
+                    <div class="main-user-right">
+                        <h2 class="main-user-title">Lịch sử thanh toán của bạn</h2>
+                        <div class="table-box">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã số</th>
+                                        <th>Loại</th>
+                                        <th>Mô tả</th>
+                                        <th>Đơn hàng</th>
+                                        <th>Trạng thái</th>
+                                        <th>Số tiền</th>
+                                        <th>Ngày tạo</th>
+                                        <th style="text-align: right;">Xem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        <div class="notification-empty-container">
+                            <i class="zmdi zmdi-card"></i> Bạn chưa thực hiện bất kỳ giao dịch nào
+                        </div>
+
+                        <div class="paginate-container"> </div>
+                    </div>
+
+            </div>
+        </div>
+        <script>
+            $(".item-user").removeClass("current");
+            $(".billing").addClass("current");
+        </script>
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/panel'); %>
+
+</body>
+
+</html>
+
+</html>

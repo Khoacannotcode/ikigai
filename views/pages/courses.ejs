@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <%- include('../partials/head'); %>
+        <style>
+            .main {
+                margin-top: 100px;
+            }
+        </style>
+
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <input type="hidden" id="csrf_token" value="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+
+    <main>
+        <div class="main">
+            <div class="main-center">
+                <%- include('../partials/profile'); %>
+
+                    <div class="main-user-right">
+
+                        <div class="dm-tab">
+                            <div class="tab-item active"><i class="zmdi zmdi-layers"></i> Khóa học đã mua</div>
+
+
+                        </div>
+                        <div class="tab-content-container bought-courses">
+                            <div class="bought-courses-container">
+
+
+                                <div class="notification-empty-container">
+                                    <i class="fa fa-mortar-board"></i> Bạn chưa mua khóa học nào
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="dm-tab" style="margin-top: 0px;">
+                            <div class="tab-item review-more-courses">Xem thêm các khóa học khác</div>
+                        </div>
+                        <div class="tab-content-container bought-other-courses">
+                            <div class="bought-courses-container">
+                                <div class="course-item">
+                                    <div class="images">
+                                        <a href="/khoahoc/N5"><img src="../public/images/Khoahoc/hantuN5.png"></a>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">
+                                            <a href="/khoahoc/N5">N5</a>
+                                        </div>
+                                        <div class="name-gv" title="Giảng viên"> Thầy Luật</div>
+                                    </div>
+                                </div>
+                                <div class="course-item">
+                                    <div class="images">
+                                        <a href="/khoahoc/N4"><img src="../public/images/Khoahoc/hantuN4.png"></a>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">
+                                            <a href="/khoahoc/N4">N4</a>
+                                        </div>
+                                        <div class="name-gv" title="Giảng viên"> Thầy Phú</div>
+                                    </div>
+                                </div>
+                                <div class="course-item">
+                                    <div class="images">
+                                        <a href="/khoahoc/N3"><img src="../public/images/Khoahoc/hantuN3.png"></a>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">
+                                            <a href="/khoahoc/N3">N3</a>
+                                        </div>
+                                        <div class="name-gv" title="Giảng viên"> Thầy Lượng</div>
+                                    </div>
+                                </div>
+                                <div class="course-item">
+                                    <div class="images">
+                                        <a href="/khoahoc/N2"><img src="../public/images/Khoahoc/hantuN2.png"></a>
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">
+                                            <a href="/khoahoc/N2">N2</a>
+                                        </div>
+                                        <div class="name-gv" title="Giảng viên"> Thầy Phương</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+            </div>
+        </div>
+
+
+        <script>
+            $(".item-user").removeClass("current");
+            $(".courses").addClass("current");
+        </script>
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/panel'); %>
+
+</body>
+
+</html>
