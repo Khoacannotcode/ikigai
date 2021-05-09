@@ -1,0 +1,25 @@
+<div class="main-user-left">
+    <div class="user-avatar-container">
+        <span class="clear-preview-upload"><i class="zmdi zmdi-close-circle"></i></span>
+        <img src="./public/upload/<%- nameuser[6] %>" alt="" />
+    </div>
+    <button type="button" class="btn change-avatar">
+        <i class="far fa-id-card"></i><span class="change-avatar-btn-desktop">&nbspThay ảnh đại diện</span><span class="change-avatar-btn-mobile">&nbspThay ảnh</span>
+</button>
+    <button type="button" class="btn btn-success save-avatar" style="display: none;">
+        <i class="fas fa-cloud-upload-alt"></i> Lưu ảnh
+</button>
+    <form id="avatar-form">
+        <input type='file' id="inputAvatar" name="inputAvatar" style="display: none;" onchange="readURL(this);" />
+    </form>
+    <div class="account-left-menu">
+        <a href="/account" class="item-user current"><i class="fas fa-user-circle"></i><span>Thông tin cá nhân</span></a>
+        <a href="/courses" class="item-user courses"><i class="fas fa-chalkboard-teacher"></i><span>Khóa học của tôi</span></a>
+        <a href="/billing" class="item-user billing"><i class="fas fa-id-card"></i><span>Lịch sử thanh toán</span></a>
+        <a href="/active" class="item-user active"><i class="zmdi zmdi-shopping-cart"></i><span>Nhập mã kích hoạt</span></a>
+        <a style="cursor: pointer;" href="/" class="item-user danger logout-tab"><i class="fas fa-power-off"></i><span>Đăng xuất</span></a>
+    </div>
+
+
+
+</div>

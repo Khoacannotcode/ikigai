@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DangKy&DangNhap</title>
+    <%- include('../partials/head'); %>
+        <style>
+            body {
+                background: linear-gradient(-45deg, #da8166, #da467fde, #23a5d5d7, #1eb390);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+            
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+        </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="header-top" align='center'>
+            <ul class="nav-left">
+                <div class="account-container" id="account-container">
+                    <div class="login-container" id="auth-container" style=" padding-top: 150px;">
+                        <span class="tillte_hoc">HÃY HỌC TIẾNG NHẬT CÙNG IKIGAI</span>
+                        <div class="login-left-container">
+                            <a href="/"><img class="auth-featured-image" src="../../public/images/logo/dangnhap1.png"></a>
+                        </div>
+                        <div class="login-right-container">
+
+                            <ul class="nav nav-pills">
+                                <li class="li-tab login-tab"><a href="/login">Đăng nhập</a></li>
+                                <li class="li-tab login-tab active"><a>Tạo tài khoản</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="register-content" class="tab-pane fade in active">
+                                    <div class="col-md-11" data-selectable="true">
+                                        <form action="" method="POST" enctype="multipart/form-data" id="register-form" class="form-horizontal" accept-charset="UTF-8" autocomplete="off">
+                                            <input type="hidden" name="_token" value="mcWWoXlczLV6fwx41WtLkC6l82CttiaBHLN4bjEl">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label"></label>
+                                                <div class="col-md-8">
+                                                    <div class="error-container" id="error-container-login">
+                                                        <div class="alert-danger" id="error-register-content">
+                                                            <%- success%>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Họ và tên</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="txtname" id="register-name" placeholder="Họ và tên" autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Email</label>
+                                                <div class="col-md-8">
+                                                    <input type="email" class="form-control" name="eemail" id="register-email" placeholder="Email" autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Mật khẩu</label>
+                                                <div class="col-md-8">
+                                                    <input type="password" class="form-control" name="password" id="register-password" placeholder="Mật khẩu" style="margin-bottom: 0; border-bottom: none;" autocomplete="off" required>
+                                                    <input type="password" class="form-control" name="password_confirm" id="register-password-confirm" placeholder="Nhập lại mật khẩu" autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Số điện thoại</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="phone" id="register-phone" placeholder="Điện thoại" autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Giới tính</label>
+                                                <div class="col-md-8">
+                                                    <select name="gender" class="form-control" style="height: 32px;">
+                                                        <option value="" disabled selected>- Chọn giới tính -</option>
+                                                        <option value="Nam">Nam</option>
+                                                        <option value="Nữ">Nữ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Ngày sinh</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+
+                                                        <div class="col-xs-5" style="padding-right: 0;">
+
+                                                            <select name="birth_month" class="form-control" id="register-month">
+                                                                <option value="">Chọn tháng</option>
+                                                                <option value="1">Tháng 1</option>
+                                                                <option value="2">Tháng 2</option>
+                                                                <option value="3">Tháng 3</option>
+                                                                <option value="4">Tháng 4</option>
+                                                                <option value="5">Tháng 5</option>
+                                                                <option value="6">Tháng 6</option>
+                                                                <option value="7">Tháng 7</option>
+                                                                <option value="8">Tháng 8</option>
+                                                                <option value="9">Tháng 9</option>
+                                                                <option value="10">Tháng 10</option>
+                                                                <option value="11">Tháng 11</option>
+                                                                <option value="12">Tháng 12</option>
+                                                            </select>
+
+
+                                                        </div>
+                                                        <div class="col-xs-3" style="padding: 0 5px;">
+                                                            <input type="number" name="birth_day" id="register-day" class="form-control" placeholder="Ngày" autocomplete="off" required/>
+                                                        </div>
+                                                        <div class="col-xs-4" style="padding-left: 0;">
+                                                            <input type="number" name="birth_year" id="register-year" class="form-control" placeholder="Năm" autocomplete="off" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Trình độ</label>
+                                                <div class="col-md-8">
+                                                    <select name="japanese_level" class="form-control" style="height: 32px;">
+                                                    <option value="" disabled selected>- Chọn trình độ hiện tại -</option>
+                                                    <option value="Không">Bắt đầu học</option>
+                                                    <option value="N5">Đã qua N5</option>
+                                                    <option value="N4">Đã qua N4</option>
+                                                    <option value="N3">Đã qua N3</option>
+                                                    <option value="N2">Đã qua N2</option>
+                                                    <option value="N1">Đã qua N1</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Quốc gia</label>
+                                                <div class="col-md-8">
+                                                    <select name="country" class="form-control" style="height: 32px;">
+                                                    <option value="" disabled selected>- Chọn quốc gia -</option>
+                                                    <option value="230">Việt Nam</option>
+                                                    <option value="107">Japan</option>
+                                                    <option value="1">Khác</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label">Avatar</label>
+                                                <div class="col-md-8">
+                                                    <input type="file" name="avatar" required value="avatar">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label"></label>
+                                                <div class="col-md-8">
+                                                    <div class="checkbox" style="margin-top: 0; padding-top: 0;">
+                                                        <label for="agree-checkbox" class="agree-policy">
+                                                            <input id="agree-checkbox" type="checkbox" name="agreement" checked> 
+                                                            <span>Đồng ý với các <a href="https://www.facebook.com/nhatngu.ikigai" target="_blank">điều khoản sử dụng</a> và 
+                                                                <a  href="https://www.facebook.com/nhatngu.ikigai" target="_blank">chính sách bảo mật</a> của website</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-8 col-md-offset-4">
+
+                                                    <button type="submit" class="btn-register" id="register-submit" style="border: none;">
+                                                    <span >Đăng ký</span>                                                                                                  
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </main>
+</body>
+<script src="../public/js/app.js.download"></script>
+
+
+</html>

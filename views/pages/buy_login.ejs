@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Buy</title>
+    <%- include('../partials/head'); %>
+
+        <style>
+            .muahang-btn {
+                display: none;
+            }
+        </style>
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/headers'); %>
+    </header>
+
+
+    <main>
+
+        <div class="main" style=" padding-top: 120px;background-color: rgb(255, 232, 240);">
+            <div class="main-center main-payment" style="opacity:0; ">
+                <ul class="nav nav-wizard">
+                    <li class="active"><a><span class="step">1</span> <span class="step-text">Thông tin khách hàng</span></a></li>
+                    <li><a><span class="step">2</span> <span class="step-text">Lựa chọn hình thức thanh toán</span></a></li>
+                    <li><a><span class="step">3</span> <span class="step-text">Tạo thành công đơn hàng</span></a></li>
+                </ul>
+
+
+                <h4 class="mb-stt" v-if="steps == 1"><a><span class="step-mb">1</span>&nbsp;&nbsp;Nhập thông tin khách hàng</a></h4>
+                <h4 class="mb-stt" v-if="steps == 2"><a><span class="step-mb">2</span>&nbsp;&nbsp;Lựa chọn hình thức thanh toán</a></h4>
+                <h4 class="mb-stt" v-if="steps == 3"><a><span class="step-mb">3</span>&nbsp;&nbsp;Tạo thành công đơn hàng</a></h4>
+
+                <div class="steps-container">
+
+                    <div class="steps-container-left">
+
+
+
+                        <div class="guest-info-container">
+                            <h3><i class="fas fa-lock"></i> Bạn cần đăng nhập hoặc tạo tài khoản để mua</h3>
+                            <h3>
+                                <a href="/login">
+                                    <div class="btn-register">Đăng nhập</div>
+                                </a>
+                                <a href="/dangky">
+                                    <div class="btn-login">Tạo tài khoản</div>
+                                </a>
+                            </h3>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="steps-container-right">
+                        <div class="payment-info-container">
+                            <div class="payment-heading">
+                                <span>Thông tin đơn hàng</span>
+                            </div>
+                            <div class="combo-item">
+                                <div class="combo-name-container" style="background: #f06; color: #fff;">
+                                    <p>KHÓA</p>
+                                    <h1>N3</h1>
+                                </div>
+                                <div class="combo-detail-container">
+                                    <div class="course-info">Học phí<br/> <b style="color: #e74c3c;">1,790,000 ₫ </b> &nbsp; (9,000 ¥)</div>
+                                    <div class="course-info">Thời hạn : 6 tháng</div>
+                                    <div class="course-info">Mã số : 3</div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h4 class="total-payment">Tổng tiền <span>1,790,000 ₫</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script type="text/javascript">
+        var userName = "Duong Minh Luong";
+        var userEmail = "duongminhluong89@gmail.com";
+        var userPhone = "0968569549";
+        var userAddress = null;
+        var cbid = "3";
+        var itemType = "course";
+        var jpPrice = "9000";
+    </script>
+
+
+    <script src="../../public/js/buy.js"></script>
+    <script type="text/javascript">
+        $(".main-payment").css('opacity', 1);
+    </script>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/panel'); %>
+
+</body>
+
+</html>

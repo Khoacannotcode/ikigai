@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Buy</title>
+    <%- include('../partials/head'); %>
+
+        <style>
+            .muahang-btn {
+                display: none;
+            }
+        </style>
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <input type="hidden" id="csrf_token" value="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+
+    <main>
+
+        <div class="main" style=" padding-top: 120px;background-color: rgb(255, 232, 240);">
+
+            <div class="main-center main-payment" style="opacity:0; ">
+
+                <ul v-if="steps == 1" class="nav nav-wizard">
+                    <li class="active"><a><span class="step">1</span> <span class="step-text">Thông tin khách hàng</span></a></li>
+                    <li v-on:click="nextSteps"><a><span class="step">2</span> <span class="step-text">Lựa chọn hình thức thanh toán</span></a></li>
+                    <li><a><span class="step">3</span> <span class="step-text">Tạo thành công đơn hàng</span></a></li>
+                </ul>
+                <ul v-if="steps == 2" class="nav nav-wizard">
+                    <li class="active" v-on:click="prevStep"><a><span class="step">1</span> <span class="step-text">Thông tin khách hàng</span></a></li>
+                    <li class="active"><a><span class="step">2</span> <span class="step-text">Lựa chọn hình thức thanh toán</span></a></li>
+                    <li><a><span class="step">3</span> <span class="step-text">Tạo thành công đơn hàng</span></a></li>
+                </ul>
+                <ul v-if="steps == 3" class="nav nav-wizard">
+                    <li class="active"><a><span class="step">1</span> <span class="step-text">Thông tin khách hàng</span></a></li>
+                    <li class="active"><a><span class="step">2</span> <span class="step-text">Lựa chọn hình thức thanh toán</span></a></li>
+                    <li class="active"><a><span class="step">3</span> <span class="step-text">Tạo thành công đơn hàng</span></a></li>
+                </ul>
+
+                <h4 class="mb-stt" v-if="steps == 1"><a><span class="step-mb">1</span>&nbsp;&nbsp;Nhập thông tin khách hàng</a></h4>
+                <h4 class="mb-stt" v-if="steps == 2"><a><span class="step-mb">2</span>&nbsp;&nbsp;Lựa chọn hình thức thanh toán</a></h4>
+                <h4 class="mb-stt" v-if="steps == 3"><a><span class="step-mb">3</span>&nbsp;&nbsp;Tạo thành công đơn hàng</a></h4>
+
+                <div class="steps-container">
+
+                    <div class="steps-container-left">
+                        <div class="step-1-container" v-if="steps == 1">
+                            <div class="customer-info-container">
+                                <div class="payment-heading">
+                                    <span>Thông tin khách hàng</span>
+                                    <a class="refresh" v-on:click="refresh">
+                                        Làm mới <i class="fas fa-sync-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="customer-info-table">
+                                    <p style="font-size: 14px; margin-bottom: 25px;">(<span style="color: #e74c3c;">*</span>) Thông tin bắt buộc</p>
+                                    <div v-if="customerError === true" class="alert alert-danger" role="alert">
+                                        <i class="zmdi zmdi-alert-triangle"></i> Vui lòng chỉnh sửa điền đầy đủ thông tin sau đó làm mới
+                                    </div>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="user-form-item important" width="200">Tên khách hàng <span title="Thông tin bắt buộc">*</span></td>
+                                                <td class="user-form-item" v-if="changeName == false">
+                                                    <b v-html="printInfo(customerName)"></b>
+                                                    <span class="action" v-on:click="showEditer('name')">
+							                          <i class="zmdi zmdi-edit"></i> chỉnh sửa
+						                        </span>
+                                                </td>
+                                                <td class="user-form-item" v-if="changeName == true">
+                                                    <span class="close" v-on:click="hideEditer('name')">
+		            		                   <i class="zmdi zmdi-close-circle"></i> Đóng
+		            	                              </span>
+                                                    <span class="error-info" v-if="errorName != ''">{{ errorName }}</span>
+                                                    <input class="customer-input" id="customer-name" type="text" :value="customerName" v-on:click="hideError" /><br/>
+                                                    <span class="change-btn" v-on:click="saveChange('name')">Lưu lại</span>
+                                                    <span class="cancel-btn" v-on:click="hideEditer('name')">Hủy bỏ</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-form-item important">Số điện thoại <span title="Thông tin bắt buộc">*</span></td>
+                                                <td class="user-form-item" v-if="changePhone == false">
+                                                    <span v-html="printInfo(customerPhone)"></span>
+                                                    <span class="action" v-on:click="showEditer('phone')">
+                                                    <i class="zmdi zmdi-edit"></i> chỉnh sửa
+                                                </span>
+                                                </td>
+                                                <td class="user-form-item" v-if="changePhone == true">
+                                                    <span class="close" v-on:click="hideEditer('phone')">
+                                                            <i class="zmdi zmdi-close-circle"></i> Đóng
+                                                        </span>
+                                                    <span class="error-info" v-if="errorPhone != ''">{{ errorPhone }}</span>
+                                                    <input class="customer-input" id="customer-phone" type="text" :value="customerPhone" v-on:click="hideError" /><br/>
+                                                    <span class="change-btn" v-on:click="saveChange('phone')">Lưu lại</span>
+                                                    <span class="cancel-btn" v-on:click="hideEditer('phone')">Hủy bỏ</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-form-item important">Email <span title="Thông tin bắt buộc">*</span></td>
+                                                <td class="user-form-item">
+                                                    <span v-html="printInfo(customerEmail)"></span>
+                                                    <span class="action protected"><i class="fas fa-key" data-toggle="tooltip" data-placement="left" title="Thuộc tính bị khóa"></i></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-form-item">Ngày sinh</td>
+                                                <td class="user-form-item">
+
+                                                    <span class="empty-info">Chưa có thông tin</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-form-item">Địa chỉ</td>
+                                                <td class="user-form-item" v-html="printInfo(customerAddress)"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+
+                            <div class="continue-container">
+                                <div class="continue">
+                                    <span class="dmr-btn" v-on:click="nextSteps">Tiếp Tục <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-2-container" v-if="steps == 2">
+                            <div class="customer-info-container">
+                                <div class="payment-heading">
+                                    <span>Chọn hình thức thanh toán</span>
+                                </div>
+                            </div>
+                            <div class="continue-container">
+                                <div class="buy-btn" v-on:click="clickBuy">
+                                    <span><i class="fas fa-shopping-cart"></i> Đặt mua khóa học</span>
+                                </div>
+
+                                <span class="light-btn" v-on:click="prevStep">Trở lại</span>
+                            </div>
+                        </div>
+                        <div class="customer-info-container" v-if="steps == 3">
+                            <div class="payment-heading">
+                                <span>Tạo đơn hàng thành công</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="steps-container-right">
+                        <div class="payment-info-container">
+                            <div class="payment-heading">
+                                <span>Thông tin đơn hàng</span>
+                            </div>
+                            <div class="combo-item">
+                                <div class="combo-name-container" style="background: #f06; color: #fff;">
+                                    <p>KHÓA</p>
+                                    <h1>N2</h1>
+                                </div>
+                                <div class="combo-detail-container">
+                                    <div class="course-info">Học phí<br/> <b style="color: #e74c3c;">1,990,000 ₫ </b> &nbsp; (10,000 ¥)</div>
+                                    <div class="course-info">Thời hạn : 6 tháng</div>
+                                    <div class="course-info">Mã số : 7</div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h4 class="total-payment">Tổng tiền <span>1,990,000 ₫</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <script type="text/javascript">
+        var userName = '<%- nameuser[0]%>';
+        var userEmail = '<%- nameuser[1]%>';
+        var userPhone = '<%- nameuser[3]%>';
+        var userAddress = null;
+        var jpPrice = "9000";
+    </script>
+
+
+
+
+
+
+
+
+
+    <script src="../../public/js/buy.js"></script>
+    <script type="text/javascript">
+        $(".main-payment").css('opacity', 1);
+    </script>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/panel'); %>
+
+</body>
+
+</html>

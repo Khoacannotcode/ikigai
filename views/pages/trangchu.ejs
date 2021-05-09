@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="http://localhost:3000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ikagai</title>
+    <%- include('../partials/head'); %>
+
+</head>
+
+
+
+<body>
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="home site-main active" id="tab1">
+
+            <div class="home-screen__feedback" align="center">
+
+
+                <div class="home-screen__feedback--na">
+                    <video controls class="video_intro">
+                        <source src="../public/video/filejav.mp4" type="video/mp4" >
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="backgroundumg">
+                        <img src="../public/images/logo/camnang.png" alt="" class="logo-slide">
+                    </div>
+                    <p class="context">
+                        Chỉ cần một nền tảng duy nhất để trở nên kiệt xuất
+                    </p>
+                    <div class="iconfb-yt">
+                        <a href="https://www.facebook.com/nhatngu.ikigai" target="_blank">
+                            <img src="../public/images/logo/logo_fb.webp" alt="img">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCk0ZfSp5RMCwRrQw8K04zaA?view_as=subscriber&fbclid=IwAR1j1GS_dgmQhhwl7ADuU0ynUzyWsobP_R8QITQkmDkVDuCcurLGA93z76I" target="_blank">
+                            <img src="../public/images/logo/logo_yt.webp" alt="img">
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="../public/images/logo/logo_ins.webp" alt="img">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <%- include('../partials/fan'); %>
+
+                <div class="home-screen__main">
+                    <div class="home-screen__main--background">
+                        <img src="../public/images/logo/hoa.png" />
+                    </div>
+
+                    <div class="home-screen__main--content">
+
+                        <div class="home-screen__main--title">
+                            <span style="color: #a336a3">Chào các bạn! Tôi là LUẬT</span>
+                            <span style="font-weight: 700">皆さん、こんにちは。LUAT です。</span>
+                        </div>
+                        <div class="home-screen__main--story">
+                            <div class="home-screen__main--story-content">
+                                <p>Đây là câu chuyện về :</p>
+                                <p class="p2">
+                                    <a href="https://www.google.com/search?q=c1&oq=c1&aqs=chrome..69i57j46i131i433j0i131i433l3j69i60l3.963j0j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11fks91v3s;2;/m/0c1q0;mt;fp;1;" target="_blank">
+                                        <b>“Tiếng Nhật đã thay đổi tôi như thế nào”</b>
+                                    </a>
+                                </p>
+                                <p>
+                                    Chỉ cần bạn sẵn sàng, chúng tôi sẽ cùng bạn viết lên một chương hoàn toàn mới của cuộc đời – một hành trình chinh phục tiếng Nhật bằng tất cả đam mê và sự cuốn hút.
+                                </p>
+                                <a href="https://www.google.com/search?q=c1&oq=c1&aqs=chrome..69i57j46i131i433j0i131i433l3j69i60l3.963j0j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11fks91v3s;2;/m/0c1q0;mt;fp;1;" style="text-decoration: none; color: #a33636; line-height: 2.5vw" target="_blank">
+                                    <span class="home-screen__btn home-screen__btn--light home-screen__btn--light-green">Xem thêm  →</span>
+                                </a>
+                            </div>
+                            <div class="home-screen__main--story-image">
+                                <img src="../public/images/home/host.png" />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+                <div class="Khoa-hoc">
+
+
+
+                    <div id="home-screen-main-preview" class="home-screen__main--preview">
+                        <div class="home-screen__main--preview-menu">
+                            <ul>
+                                <li @click="choosePreview(5, [{&quot;id&quot;:2,&quot;name&quot;:&quot;Ng\u1eef ph\u00e1p&quot;,&quot;avatar_name&quot;:&quot;nguphapN5.png&quot;,&quot;SEOurl&quot;:&quot;N5&quot;,&quot;author_id&quot;:1},{&quot;id&quot;:703,&quot;name&quot;:&quot;H\u1ed9i tho\u1ea1i&quot;,&quot;avatar_name&quot;:&quot;hoithoaiN5.png&quot;,&quot;SEOurl&quot;:&quot;N5&quot;,&quot;author_id&quot;:11},{&quot;id&quot;:2427,&quot;name&quot;:&quot;Ch\u1eef h\u00e1n&quot;,&quot;avatar_name&quot;:&quot;hantuN5.png&quot;,&quot;SEOurl&quot;:&quot;N5&quot;,&quot;author_id&quot;:2}])"
+                                    v-bind:style="{background: chosenPreview == 5 ? '#FFF' : 'transparent', color: chosenPreview == 5 ? '#41A336' : '#FFF'}">Khoá N5</li>
+                                <li @click="choosePreview(4, [{&quot;id&quot;:129,&quot;name&quot;:&quot;Ng\u1eef ph\u00e1p&quot;,&quot;avatar_name&quot;:&quot;nguphapN4.png&quot;,&quot;SEOurl&quot;:&quot;N4&quot;,&quot;author_id&quot;:1},{&quot;id&quot;:130,&quot;name&quot;:&quot;\H\u1ed9i tho\u1ea1i&quot;,&quot;avatar_name&quot;:&quot;hoithoaiN4.png&quot;,&quot;SEOurl&quot;:&quot;N4&quot;,&quot;author_id&quot;:10},{&quot;id&quot;:2447,&quot;name&quot;:&quot;Ch\u1eef h\u00e1n&quot;,&quot;avatar_name&quot;:&quot;hantuN4.png&quot;,&quot;SEOurl&quot;:&quot;N4&quot;,&quot;author_id&quot;:2}])"
+                                    v-bind:style="{background: chosenPreview == 4 ? '#FFF' : 'transparent', color: chosenPreview == 4 ? '#41A336' : '#FFF'}">Khoá N4</li>
+                                <li @click="choosePreview(3, [{&quot;id&quot;:350,&quot;name&quot;:&quot;Ng\u1eef ph\u00e1p&quot;,&quot;avatar_name&quot;:&quot;nguphapN3.png&quot;,&quot;SEOurl&quot;:&quot;N3&quot;,&quot;author_id&quot;:2},{&quot;id&quot;:4103,&quot;name&quot;:&quot;H\u1ed9i tho\u1ea1i&quot;,&quot;avatar_name&quot;:&quot;hoithoaiN3.png&quot;,&quot;SEOurl&quot;:&quot;N3&quot;,&quot;author_id&quot;:1},{&quot;id&quot;:4243,&quot;name&quot;:&quot;Ch\u1eef h\u00e1n&quot;,&quot;avatar_name&quot;:&quot;hantuN3.png&quot;,&quot;SEOurl&quot;:&quot;N3&quot;,&quot;author_id&quot;:2}])"
+                                    v-bind:style="{background: chosenPreview == 3 ? '#FFF' : 'transparent', color: chosenPreview == 3 ? '#41A336' : '#FFF'}">Khoá N3</li>
+                                <li @click="choosePreview(2, [{&quot;id&quot;:1043,&quot;name&quot;:&quot;Ng\u1eef ph\u00e1p&quot;,&quot;avatar_name&quot;:&quot;nguphapN2.png&quot;,&quot;SEOurl&quot;:&quot;N2&quot;,&quot;author_id&quot;:1},{&quot;id&quot;:4448,&quot;name&quot;:&quot;H\u1ed9i tho\u1ea1i&quot;,&quot;avatar_name&quot;:&quot;hoithoaiN2.png&quot;,&quot;SEOurl&quot;:&quot;N2&quot;,&quot;author_id&quot;:1},{&quot;id&quot;:4569,&quot;name&quot;:&quot;Ch\u1eef h\u00e1n&quot;,&quot;avatar_name&quot;:&quot;hantuN2.png&quot;,&quot;SEOurl&quot;:&quot;N2&quot;,&quot;author_id&quot;:1}])"
+                                    v-bind:style="{background: chosenPreview == 2 ? '#FFF' : 'transparent', color: chosenPreview == 2 ? '#41A336' : '#FFF'}">Khoá N2</li>
+                                <li @click="choosePreview(1, [{&quot;id&quot;:2002,&quot;name&quot;:&quot;Ng\u1eef ph\u00e1p&quot;,&quot;avatar_name&quot;:&quot;nguphapN1.png&quot;,&quot;SEOurl&quot;:&quot;N1&quot;,&quot;author_id&quot;:4},{&quot;id&quot;:2056,&quot;name&quot;:&quot;H\u1ed9i tho\u1ea1i&quot;,&quot;avatar_name&quot;:&quot;hoithoaiN1.png&quot;,&quot;SEOurl&quot;:&quot;N1&quot;,&quot;author_id&quot;:11},{&quot;id&quot;:2074,&quot;name&quot;:&quot;Ch\u1eef h\u00e1n&quot;,&quot;avatar_name&quot;:&quot;hantuN1.png&quot;,&quot;SEOurl&quot;:&quot;N1&quot;,&quot;author_id&quot;:2}])"
+                                    v-bind:style="{background: chosenPreview == 1 ? '#FFF' : 'transparent', color: chosenPreview == 1 ? '#41A336' : '#FFF'}">Khoá N1</li>
+
+                            </ul>
+                        </div>
+                        <div class="home-screen__main--preview-content">
+                            <div v-for="item in previews" class="home-screen__main--preview-content-item">
+                                <div class="preview-image">
+                                    <img style="height: 14vw" class="lazyload course-thumbnail" :src="'../public/images/Khoahoc/' + item.avatar_name" />
+                                </div>
+                                <div class="preview-button">
+                                    <a :href="url + '/khoahoc'+ item.SEOurl" class="play-icon-btn" target="_blank">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="preview-name"><span v-cloak>{{item.name}}</span></div>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <a :href="link" target="_blank" class="d-flex flex-column justify-content-center align-items-center">
+                                    <span class="d-flex justify-content-center align-items-center" style="cursor: pointer; font-size: 2vw; width: 2vw; height: 2vw; background: #FFF; color: #141414; border-radius: 50%;">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="metro-container">
+
+                    <div class="home-screen__top">
+                        <div id="home-slick-slider" class="home-screen__slider">
+                            <div class="home-screen__slider--item slick-slide">
+                                <a class="home-screen__slider--inner" href="https://www.facebook.com/nhatngu.ikigai" target="_blank">
+                                    <div class="img">
+                                        <img class="lazyload" src="../public/images/trangchu/hoctap.png" alt="N1">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="home-screen__slider--item slick-slide">
+                                <a class="home-screen__slider--inner" href="/khoahocN1" target="_blank">
+                                    <div class="img">
+                                        <img class="lazyload" src="../public/images/trangchu/PhuLe.png" alt="N2">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="home-screen__slider--item slick-slide">
+                                <a class="home-screen__slider--inner" id="tu-van-jav">
+                                    <div class="img">
+                                        <img class="lazyload" src="../public/images/trangchu/tuvan.png" alt="N3">
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="home-screen__slider--nav">
+                            <div id="prv_sld" class="home-screen__slider--nav-btn prv">
+                                <div class="home-screen__slider--nav-ico">
+                                    <i class="fas fa-angle-left fa-2x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div id="nxt_sld" class="home-screen__slider--nav-btn nxt">
+                                <div class="home-screen__slider--nav-ico">
+                                    <i class="fas fa-angle-right fa-2x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="home-screen__main--badge">
+                    <div class="home-screen__main--badge-center">
+                        <span><span class="news">Bảng tin nước Nhật và kì thi JLPT</span></span>
+                        <span>の掲示板</span>
+                        <span class="leaf"><img src=""/></span>
+                    </div>
+                </div>
+
+
+
+
+                <div class="home-screen__blog">
+                    <div class="home-screen__blog--feature">
+                        <div class="home-screen__blog--feature-title">Bài viết nổi bật</div>
+                        <div class="home-screen__blog--feature-post">
+                            <div class="feature-post-image">
+                                <img src="../public/images/home/host.png" />
+                            </div>
+                            <div class="feature-post-content">
+                                <a class="feature-post-title" target="_blank" href="https://www.facebook.com/Nh%E1%BA%ADt-Ng%E1%BB%AF-ikigai-103271318326995/?modal=admin_todo_tour&notif_id=1607673863391495&notif_t=page_invite&ref=notif">
+                                    <span><b> Lộ trình học tiếng Nhật cho người mới bắt đầu</b></span>
+                                </a>
+                                <span class="feature-post-intro">Lộ trình học tiếng Nhật giúp bạn nhanh chóng tiếp cận và nắm bắt được vốn tiếng Nhật trong thời gian sớm nhất.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="home-screen-blog" class="home-screen__blog--categories">
+                        <div class="home-screen__blog--categories-title">Bài viết theo danh mục</div>
+                        <div class="home-screen__blog--categories-menu">
+                            <span class="menu-item" @click="currentCategory = 7" v-bind:class="{'active': currentCategory == 7}">Học tiếng Nhật</span>
+                            <span class="menu-item" @click="currentCategory = 1" v-bind:class="{'active': currentCategory == 1}">Kỳ thi JLPT</span>
+                            <a href="https://www.facebook.com/Nh%E1%BA%ADt-Ng%E1%BB%AF-ikigai-103271318326995/?modal=admin_todo_tour&notif_id=1607673863391495&notif_t=page_invite&ref=notif" target="_blank" class="d-flex justify-content-center align-items-center see-more-button"
+                                title="Xem thêm">
+                                <i class="fas fa-angle-right"></i></a>
+                        </div>
+                        <div class="home-screen__blog--categories-posts">
+                            <div v-for="post in newsList" class="post">
+                                <div class="post-title" v-cloak>
+                                    <a target="_blank" :href="post.url" class="featured-title">{{post.title}}</a>
+                                </div>
+                                <div class="post-intro" v-cloak>
+                                    {{post.intro | truncate(160, ' ', ' ...')}}
+                                    <a target="_blank" :href="post.url" class="featured-title"> Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <%- include('../partials/blog'); %>
+
+                    <div class="home-screen__contact--form" id="tu-van">
+                        <div class="home-screen__contact--form-inner">
+                            <div class="contact-form">
+                                <div class="contact-form-tent">
+                                    <div class="contact-form-tent-and">HÃY CÙNG </div>
+                                    <div class="contact-form-tent-and-nihon">CHINH PHỤC TIẾNG NHẬT</div>
+                                    <div class="logo" align="center">
+                                        <img src="" />
+                                    </div>
+                                </div>
+                                <form action="https://formspree.io/f/mgepngjv" method="POST">
+                                    <div>
+                                        <div class="form-group">
+                                            <span class="input input--kohana">
+                                <input class="input__field input__field--kohana" name="full_name" id="full_name" type="text" id="input-29" required/>
+                                <label class="input__label input__label--kohana" for="input-29">
+                                    <i class="far fa-user icon icon--kohana"></i>
+                                    <span class="input__label-content input__label-content--kohana">Họ và tên <sup >*</sup></span>
+                                            </label>
+                                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="input input--kohana">
+                                <input class="input__field input__field--kohana" name="email" id="user_email" type="text" id="input-29" required/>
+                                <label class="input__label input__label--kohana" for="input-29">
+                                    <i class="fas fa-envelope icon icon--kohana"></i>
+                                    <span class="input__label-content input__label-content--kohana">Email <sup >*</sup></span>
+                                            </label>
+                                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="input input--kohana">
+                                <input class="input__field input__field--kohana" name="phone_number" id="phone_number" type="tel" id="input-29" required/>
+                                <label class="input__label input__label--kohana" for="input-29">
+                                    <i class="fas fa-phone-alt icon icon--kohana"></i>
+                                    <span class="input__label-content input__label-content--kohana">Số điện thoại <sup >*</sup></span>
+                                            </label>
+                                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="input input--kohana">
+                                <select class="form-control" id="course_name" name="course">
+                                    <option disabled selected value="">Chọn khóa học </option>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                    <option value="Offline">Khóa học Offline</option>
+                                    <option value="N1">Khóa học N1</option>
+                                    <option value="N2">Khóa học N2</option>
+                                    <option value="N3">Khóa học N3</option>
+                                    <option value="N4">Khóa học N4</option>
+                                    <option value="N5">Khóa học N5</option>
+                                    <option value="Kaiwa">Khóa học Kaiwa </option>
+                                   
+                                </select>
+                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="input input--kohana home-screen__contact--form-inner-submit">
+                                <button type="submit"  style="padding: 10px; text-align: center;width: 100%; color: black;">ĐĂNG KÝ NHẬN TƯ VẤN</button>
+                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/panel'); %>
+        <script>
+            var previewComponent = new Vue({
+                el: '#home-screen-main-preview',
+                data: function() {
+                    return {
+                        url: window.location.origin,
+                        chosenPreview: 5,
+                        previews: [],
+                        link: '',
+                        course: ''
+                    }
+                },
+                methods: {
+                    choosePreview: function(choice, previews) {
+                        var vm = this;
+                        vm.chosenPreview = choice;
+                        vm.previews = previews;
+                        switch (choice) {
+                            case 5:
+                                vm.link = vm.url + '/khoahocN5';
+                                vm.course = 'khoa-n5';
+                                break;
+                            case 4:
+                                vm.link = vm.url + '/khoahocN4';
+                                vm.course = 'khoa-n4';
+                                break;
+                            case 3:
+                                vm.link = vm.url + '/khoahocN3';
+                                vm.course = 'khoa-n3';
+                                break;
+                            case 2:
+                                vm.link = vm.url + '/khoahocN2';
+                                vm.course = 'khoa-n2';
+                                break;
+                            case 1:
+                                vm.link = vm.url + '/khoahocN1';
+                                vm.course = 'khoa-n1';
+                                break;
+                            default:
+                                vm.link = vm.url + '/khoahocN5';
+                                vm.course = 'khoa-n5';
+                                break;
+                        }
+                    }
+                },
+                mounted: function() {
+                    var vm = this;
+                    vm.choosePreview(5, [{
+                        "id": 2,
+                        "name": "Ng\u1eef ph\u00e1p",
+                        "avatar_name": "hoithoaiN5.png",
+                        "SEOurl": "N5",
+                        "author_id": 1
+                    }, {
+                        "id": 703,
+                        "name": "H\u1ed9i tho\u1ea1i",
+                        "avatar_name": "hoithoaiN5.png",
+                        "SEOurl": "N5",
+                        "author_id": 11
+                    }, {
+                        "id": 2427,
+                        "name": "Ch\u1eef h\u00e1n",
+                        "avatar_name": "hantuN5.png",
+                        "SEOurl": "N5",
+                        "author_id": 2
+                    }]);
+                }
+            });
+        </script>
+        <script type="text/javascript">
+            var newsComponent = new Vue({
+                el: '#home-screen-blog',
+                data: function() {
+                    return {
+                        currentCategory: 1,
+                        newsList: []
+                    }
+                },
+                watch: {
+                    currentCategory: function(val) {
+                        var vm = this;
+                        switch (val) {
+                            case 7:
+                                vm.newsList = [{
+                                    "id": 1,
+                                    "sort_order": 99,
+                                    "title": "Các lí do nên học tiếng nhật",
+                                    "category_id": 7,
+                                    "series_id": 0,
+                                    "intro": "Ngày nay, việc học ngôn ngữ mở ra một chân trời mới cho các bạn trẻ với cơ hội việc làm rộng mở. Tuy nhiên với một thị trường lao động cạnh tranh khốc liêt như hiện nay, việc chỉ biết tiếng Anh thôi chưa đủ.",
+                                    "url": "https://duhocnhatban-kei.vn/9-ly-do-nen-hoc-tieng-nhat",
+                                    "public": 1,
+                                    "updated_at": "2020-11-27 10:21:10",
+                                    "created_at": "2019-09-30 10:23:20",
+                                    "author_name": "Ikaga"
+                                }, {
+                                    "id": 27,
+                                    "sort_order": 98,
+                                    "title": "Nh\u1eefng l\u1ed7i sai trong ti\u1ebfng Nh\u1eadt c\u01a1 b\u1ea3n",
+                                    "category_id": 7,
+                                    "series_id": 0,
+                                    "intro": "Trên thực tế hiện nay có nhiều người mặc dù đã học tiếng Nhật cơ bản rất lâu tuy nhiên vẫn chưa thể giao tiếp thành thạo. Nguyên nhân là do các bạn đã mắc phải một số sai lầm trong suốt quá trình học. Nếu không phát hiện ra sai lầm ngay từ đầu và tìm cách khắc phục sẽ dẫn tới việc học tiếng Nhật lâu mà không mang lại hiệu quả.",
+                                    "url": "https://trungtamnhatngu.edu.vn/blog/nhung-loi-sai-khi-hoc-tieng-nhat-co-ban-1223/",
+                                    "updated_at": "2020-11-27 01:24:33",
+                                    "created_at": "2017-06-10 00:00:00",
+                                    "author_name": "Ikaga"
+                                }, {
+                                    "id": 253,
+                                    "sort_order": 0,
+                                    "title": "6 cách học Kanji hiệu quả cho người mới bắt đầu",
+                                    "category_id": 7,
+                                    "series_id": 0,
+                                    "intro": "Đối với nhiều người mới bắt đầu học tiếng Nhật, Kanji là phần khó học và khó nhớ nhất. Nếu bạn cũng vậy, đang băn khoăn không biết học Kanji sao cho nhớ thật nhanh và nhớ thật lâu, thì bài viết chia sẻ 6 cách học Kanji dưới đây chính là dành cho bạn. Akira sẽ nêu các cách học hữu ích cũng như ưu và nhược điểm để bạn chọn chọn phương pháp phù hợp nhất, từ đó vượt qua nỗi sợ chữ Hán.",
+                                    "url": "https://akira.edu.vn/cach-hoc-kanji-hieu-qua-cho-nguoi-moi-bat-dau/",
+                                    "updated_at": "2020-11-27 11:21:47",
+                                    "created_at": "2019-10-14 08:06:41",
+                                    "author_name": "Ikaga"
+                                }]
+                                break;
+                            case 1:
+                                vm.newsList = [{
+                                    "id": 349,
+                                    "sort_order": 0,
+                                    "title": "Tất tần tật những điều bạn cần biết về kỳ thi năng lực tiếng Nhật JLPT",
+                                    "category_id": 1,
+                                    "series_id": 0,
+                                    "intro": "Có thể bạn đã biết, kỳ thi năng lực tiếng Nhật JLPT là kỳ kiểm tra trình độ tiếng Nhật cho người nước ngoài có nhiều thí sinh tham gia nhất ở Việt Nam. Đây không chỉ là cơ hội để bạn tìm kiếm một tấm bằng cho công việc tương lai, mà còn là cách giúp để bạn thấy được hiệu quả học tiếng Nhật của mình đến đâu. Hãy cùng Akira tìm hiểu những điểm cơ bản cần biết và các mẹo làm bài thi JLPT hiệu quả nhé!",
+                                    "url": "https://akira.edu.vn/cac-ki-thi-nang-luc-tieng-nhat-jlpt/",
+                                    "updated_at": "2020-11-26 20:01:01",
+                                    "created_at": "2020-07-22 15:07:57",
+                                    "author_name": ""
+                                }, {
+                                    "id": 255,
+                                    "sort_order": 0,
+                                    "title": "Đáp án kỳ thi JLPT 12/2020 mới nhất",
+                                    "category_id": 1,
+                                    "series_id": 0,
+                                    "intro": "Đây là đáp án mới nhất và chính xác nhất nhé.",
+                                    "url": "https://japan.net.vn/dap-an-chinh-thuc-tat-ca-cac-de-thi-nang-luc-tieng-nhat-jlpt-lhm-3349.htm",
+                                    "updated_at": "2020-11-27 10:28:28",
+                                    "created_at": "2019-12-01 16:37:06",
+                                    "author_name": ""
+                                }, {
+                                    "id": 252,
+                                    "sort_order": 0,
+                                    "title": "Chữa đề thi tiếng Nhật JLPT N5-N1 chính xác nhất",
+                                    "category_id": 1,
+                                    "series_id": 0,
+                                    "intro": "Kỳ thi năng lực tiếng Nhật JLPT có tên gọi tiếng Nhật là 日本語能力試験 JLPT, tên tiếng Anh là tiếng Japanese Language Proficiency Test. Được chia thành các cấp độ: N1, N2, N3, N4, N",
+                                    "url": "https://japan.net.vn/hot-chua-de-thi-tieng-nhat-jlpt-n5-n1-chinh-xac-nhat-cho-tts-lhm-3754.htm",
+                                    "updated_at": "2020-11-26 20:03:13",
+                                    "created_at": "2019-10-09 16:03:18",
+                                    "author_name": ""
+                                }]
+                                break;
+                            default:
+                                vm.newsList = [{
+                                    "id": 1,
+                                    "sort_order": 99,
+                                    "title": "Các lí do nên học tiếng nhật",
+                                    "category_id": 7,
+                                    "series_id": 0,
+                                    "intro": "Ngày nay, việc học ngôn ngữ mở ra một chân trời mới cho các bạn trẻ với cơ hội việc làm rộng mở. Tuy nhiên với một thị trường lao động cạnh tranh khốc liêt như hiện nay, việc chỉ biết tiếng Anh thôi chưa đủ.",
+                                    "url": "https://duhocnhatban-kei.vn/9-ly-do-nen-hoc-tieng-nhat",
+                                    "updated_at": "2020-11-27 10:21:10",
+                                    "created_at": "2019-09-30 10:23:20",
+                                    "author_name": "Ikaga"
+                                }, {
+                                    "id": 27,
+                                    "sort_order": 98,
+                                    "title": "Nh\u1eefng l\u1ed7i sai trong ti\u1ebfng Nh\u1eadt c\u01a1 b\u1ea3n",
+                                    "category_id": 7,
+                                    "series_id": 0,
+                                    "intro": "Trên thực tế hiện nay có nhiều người mặc dù đã học tiếng Nhật cơ bản rất lâu tuy nhiên vẫn chưa thể giao tiếp thành thạo. Nguyên nhân là do các bạn đã mắc phải một số sai lầm trong suốt quá trình học. Nếu không phát hiện ra sai lầm ngay từ đầu và tìm cách khắc phục sẽ dẫn tới việc học tiếng Nhật lâu mà không mang lại hiệu quả.",
+                                    "url": "https://trungtamnhatngu.edu.vn/blog/nhung-loi-sai-khi-hoc-tieng-nhat-co-ban-1223/",
+                                    "updated_at": "2020-11-27 01:24:33",
+                                    "created_at": "2017-06-10 00:00:00",
+                                    "author_name": "Ikaga"
+                                }, {
+                                    "id": 253,
+                                    "sort_order": 0,
+                                    "title": "6 cách học Kanji hiệu quả cho người mới bắt đầu",
+                                    "category_id": 7,
+                                    "series_id": 0,
+                                    "intro": "Đối với nhiều người mới bắt đầu học tiếng Nhật, Kanji là phần khó học và khó nhớ nhất. Nếu bạn cũng vậy, đang băn khoăn không biết học Kanji sao cho nhớ thật nhanh và nhớ thật lâu, thì bài viết chia sẻ 6 cách học Kanji dưới đây chính là dành cho bạn. Akira sẽ nêu các cách học hữu ích cũng như ưu và nhược điểm để bạn chọn chọn phương pháp phù hợp nhất, từ đó vượt qua nỗi sợ chữ Hán.",
+                                    "url": "https://akira.edu.vn/cach-hoc-kanji-hieu-qua-cho-nguoi-moi-bat-dau/",
+                                    "updated_at": "2020-11-27 11:21:47",
+                                    "created_at": "2019-10-14 08:06:41",
+                                    "author_name": "Ikaga"
+                                }]
+                        }
+                    }
+                },
+                methods: {
+
+                },
+                mounted: function() {
+                    var vm = this;
+                    vm.currentCategory = 7;
+                }
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#home-slick-slider').slick({
+                    centerMode: true,
+                    centerPadding: "60px",
+                    slidesToShow: 1,
+                    variableWidth: true,
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 1000,
+                    speed: 800,
+                    waitForAnimate: true,
+                    lazyLoad: "ondemand",
+                    responsive: [{
+                        breakpoint: 1160,
+                        settings: {
+                            variableWidth: false
+                        }
+                    }, {
+                        breakpoint: 768,
+                        settings: {
+                            variableWidth: false,
+                            centerPadding: "22.5px"
+                        }
+                    }]
+                })
+
+                $("#nxt_sld").on("click", function(e) {
+                    e.preventDefault();
+                    $("#home-slick-slider").slick("slickNext")
+                });
+                $("#prv_sld").on("click", function(e) {
+                    e.preventDefault();
+                    $("#home-slick-slider").slick("slickPrev")
+                });
+            })
+        </script>
+        <script type="text/javascript">
+            (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we 
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+                    // in case the input is already filled..
+                    if (inputEl.value.trim() !== '') {
+                        classie.add(inputEl.parentNode, 'input--filled');
+                    }
+
+                    // events:
+                    inputEl.addEventListener('focus', onInputFocus);
+                    inputEl.addEventListener('blur', onInputBlur);
+                });
+
+                function onInputFocus(ev) {
+                    classie.add(ev.target.parentNode, 'input--filled');
+                }
+
+                function onInputBlur(ev) {
+                    if (ev.target.value.trim() === '') {
+                        classie.remove(ev.target.parentNode, 'input--filled');
+                    }
+                }
+            })();
+        </script>
+</body>
+
+</html>

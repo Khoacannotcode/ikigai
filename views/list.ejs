@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="http://localhost:3000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HocVien</title>
+
+
+
+    <style>
+        body {
+            background-color: pink;
+        }
+        
+        .charactor {
+            margin-top: 100px;
+        }
+        
+        .charactor img {
+            width: 15%;
+            height: 15%;
+            margin: 40px 0 0 40%;
+        }
+        
+        .charactor a {
+            display: block;
+            width: 30%;
+            height: 40%;
+            background-color: lightblue;
+            color: red;
+            margin: 0 0 0 20%;
+        }
+        
+        .charactor a:hover {
+            background-color: pink;
+            color: blue;
+            border: lightcoral solid;
+        }
+        
+        .info {
+            padding: 20px 0 0 62%;
+            margin-top: -200px;
+        }
+        
+        .title {
+            text-align: center;
+        }
+        
+        .button {
+            width: 20%;
+            padding: -100px 0 0 200px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="title">
+        <h1>
+            Danh sách học viên
+        </h1>
+    </div>
+    <div id="HocVienList">
+        <% danhsach.forEach(function(dangkytaikhoan){ %>
+            <div class="charactor">
+
+
+                <img src="./public/upload/<%- dangkytaikhoan.Images %>" alt="" />
+                <div class="info">
+                    <div class="dkName">
+                        <%- dangkytaikhoan.name %>
+                    </div>
+                    <div class="dkemail">
+                        <%- dangkytaikhoan.email %>
+                    </div>
+                    <div class="dkphone">
+                        <%- dangkytaikhoan.phone %>
+                    </div>
+                    <div class="dkgender">
+                        <%- dangkytaikhoan.gender %>
+                    </div>
+                    <div class="dkbirthday">
+                        <%- dangkytaikhoan.birthday.day %>/
+                            <%- dangkytaikhoan.birthday.month %>/
+                                <%- dangkytaikhoan.birthday.year %>.
+                    </div>
+                    <div class="dkjapanese_level">
+                        <%- dangkytaikhoan.japanese_level %>
+                    </div>
+                    <div class="dkcountry">
+                        <%- dangkytaikhoan.country %>
+                    </div>
+                    <div class="button">
+                        <a onclick="return confirm('Bạn chắc chắn có muốn xóa học viên <%- dangkytaikhoan.name %> không?')" href="./delete/<%- dangkytaikhoan._id %>">Delete</a>
+                    </div>
+                </div>
+
+            </div>
+            <% }); %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<div class="site-header">
+    <div class="header-top">
+        <ul class="nav-left">
+
+        </ul>
+
+
+    </div>
+    <div class="header-content mid-header">
+        <div class="container">
+            <a href="/trangchu" class="logo" id="logo">
+                <img src="../public/images/logo/logo ikigai-01.png" alt="logo">
+            </a>
+            <div class="block-nav-menu">
+                <ul class="ui-menu">
+                    <li>
+                        <div class="dropdown">
+                            <a class="mn-item chuyen-nganh">Khóa học</a>
+                            <div class="dropdown-content">
+                                <a href="/khoahocN5" class="mn-item cn4"><span> Khóa N5</span></a>
+                                <a href="/khoahocN4" class="mn-item cn4"><span> Khóa N4</span></a>
+                                <a href="/khoahocN3" class="mn-item cn3"><span> Khóa N3</span></a>
+                                <a href="/khoahocN2" class="mn-item cn2"><span> Khóa N2</span></a>
+                                <a href="/khoahocN1" class="mn-item cn1"><span> Khóa N1</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="mn-item cn5">Kỹ năng</a>
+                            <div class="dropdown-content">
+                                <a class="mn-item kaiwa"><span>Kaiwa</span> </a>
+                                <a class="mn-item choukai"><span>Choukai</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="mn-item cn5">Luyện thi</a>
+                            <div class="dropdown-content">
+                                <a class="mn-item jlpt"><span>JLPT</span></a>
+                                <a class="mn-item nat"><span>NAT</span></a>
+                                <a class="mn-item thi"><span>Thi thử</span></a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <div class="account-container" id="account-container">
+                        <div class="dropdown auth-container" id="auth-container">
+                            <div class="dropdown-toggle user-info-box" type="button" data-toggle="dropdown" style="width:10vw">
+                                <img class="user-avatar-circle" src="./public/upload/<%- nameuser[6] %>" alt="" />
+                                <span class="user-name">
+                                    <%- nameuser[0]%>
+                                </span>
+                                <span class="caret"></span>
+                            </div>
+                            <ul class="dropdown-menu user-menu">
+                                <img class="caret-up" src="../public/images/icon/caret-up.png" />
+                                <li><a href="/account" style="font-size: 16px;"><i class="fas fa-user-circle"></i> Thông tin cá nhân</a></li>
+                                <li><a href="/courses" style="font-size: 16px;"><i class="fas fa-chalkboard-teacher"></i> Khóa học của tôi</a></li>
+                                <li><a href="/billing" style="font-size: 16px;"><i class="fas fa-id-card"></i> Lịch sử thanh toán</a></li>
+                                <li><a href="/active" style="font-size: 16px;"><i class="fas fa-shopping-cart"></i><span>Nhập mã kích hoạt</span></a></li>
+                                <li><a href="/reset" style="font-size: 16px;"><i class="fas fa-lock"></i>Thay đổi mật khẩu</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a href="/" style="font-size: 16px;"><i class="fas fa-power-off"></i> Đăng xuất</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="mobile-header">
+
+    <div id="nav-icon">
+        <span class="nav-span"></span>
+        <span class="nav-span"></span>
+        <span class="nav-span"></span>
+        <ul class="dropdown-menu">
+            <div class="col">
+                <div class="tabs">
+                    <div class="tab">
+                        <input type="checkbox" id="chck0">
+                        <label class="tab-label label-account" for="chck0">
+                            <div class="user-info-box">
+                                <img class="user-avatar-circle"
+                                  src=""
+                                                                    />
+                                <div style="width: 70%;">
+                                    <p class="user-name"></p>
+                                    <i class="zmdi zmdi-settings"></i><i class="user-name">Tùy chỉnh</i>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="tab-content account-expand">
+                            <li><a href=""><i class="zmdi zmdi-notifications"></i> Xem thông báo</a></li>
+                            <li><a href=""><i class="fas fa-user-circle"></i> Thông tin cá nhân</a></li>
+                            <li><a href="" s><i class="fas fa-chalkboard-teacher"></i> Khóa học của tôi</a></li>
+                            <li><a href=""><i class="fas fa-id-card"></i> Lịch sử thanh toán</a></li>
+                            <li><a href=""><i class="fas fa-lock"></i>Thay đổi mật khẩu</a></li>
+                            <div class="dropdown-divider"></div>
+                            <li><a href="/" style="font-size: 18px;"><i class="fas fa-power-off"></i> Đăng xuất</a></li>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <li>
+                <a href="/trangchu"><img class="icon-menu-item" src="../public/images/logo/logo ikigai-01.png" />
+                    <p>Trang chủ</p>
+                </a>
+
+            </li>
+
+            <div class="col">
+                <div class="tabs">
+                    <div class="tab">
+                        <input type="checkbox" id="chck1">
+                        <label class="tab-label" for="chck1"><img class="icon-menu-item" src="" /><p>Khoá JLPT</p></label>
+                        <div class="tab-content">
+                            <a href="/khoahocN5">
+                                <p>N5
+
+                                </p>
+                            </a>
+                            <a href="/khoahocN4">
+                                <p>N4</p>
+                            </a>
+                            <a href="/khoahocN3">
+                                <p>N3</p>
+                            </a>
+                            <a href="/khoahocN2">
+                                <p>N2</p>
+                            </a>
+                            <a href="/khoahocN1">
+                                <p>N1</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="checkbox" id="chck2">
+                        <label class="tab-label" for="chck2"><img class="icon-menu-item" src="" /><p>Khoá Kaiwa</p></label>
+                        <div class="tab-content">
+                            <a>
+                                <p>Kaiwa sơ cấp</p>
+                            </a>
+                            <a>
+                                <p>Kaiwa trung cấp</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <li>
+                <a><img class="icon-menu-item" src="" />
+                    <p>Chuyên ngành</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <a href="/trangchu" class="logo" id="logo">
+        <img src="../public/images/logo/logo ikigai-01.png" alt="">
+    </a>
+
+
+</div>
+<script src="../../public/js/app.js.download"></script>

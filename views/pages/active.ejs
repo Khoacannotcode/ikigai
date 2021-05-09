@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <%- include('../partials/head'); %>
+        <style>
+            .main {
+                margin-top: 100px;
+            }
+        </style>
+
+</head>
+
+<body>
+
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+
+    <main>
+        <input type="hidden" id="csrf_token" value="S0Khl6D4o4W0KzQfYCsVJoGdJIxebYM9no9JHaVk">
+        <div class="main">
+            <div class="main-center">
+
+                <%- include('../partials/profile'); %>
+
+                    <div class="main-user-right" id="fill_active_code">
+                        <h2 class="main-user-title">Nhập mã kích hoạt</h2>
+                        <table class="table">
+                            <ul class="error-list" id="error-list" style="display: none;">
+                                <li v-for="error in errors">{{ error }}</li>
+                            </ul>
+                            <tbody>
+                                <tr>
+                                    <td class="user-form-item password-label">Nhập mã kích hoạt</td>
+                                    <td class="user-form-item"><input type="text" class="form-control" id="pin" placeholder="Mã kích hoạt" autocomplete="off"></td>
+                                </tr>
+                                <tr>
+                                    <td class="user-form-item password-label">Mã chống spam</td>
+                                    <td class="user-form-item lock">
+                                        <input type="text" class="form-control captcha-input" style="width: 200px;" id="captcha" placeholder="Nhập mã bên cạnh" autocomplete="off">
+                                        <div class="captcha-container captcha-active-course" id="captcha-change"><img src="" alt="" style="cursor:pointer;width:150px;height:40px;" title="Update">
+                                        </div>
+                                        <i style="margin-left:15px;margin-top:15px;" class="fas fa-undo"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="user-form-item password-label"></td>
+                                    <td class="user-form-item lock"><button type="button" class="btn btn-success">Kích hoạt</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+            </div>
+        </div>
+        <script>
+            $(".item-user").removeClass("current");
+            $(".active").addClass("current");
+        </script>
+
+
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/panel'); %>
+
+</body>
+
+</html>

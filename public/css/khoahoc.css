@@ -1,0 +1,858 @@
+@media (max-width:549px) {
+    h1 {
+        font-size: 1.4em
+    }
+    h3 {
+        font-size: 1em
+    }
+}
+
+@font-face {
+    font-family: robokoto;
+    src: url(../../public/fonts/Roboto-Medium.ttf);
+}
+
+#wrapper,
+#main {
+    background-color: #fff;
+    position: relative
+}
+
+html {
+    background-color: #5b5b5b
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    /* flex: 1 1 auto; */
+    /* min-height: 1px; */
+    padding: 1.25rem;
+}
+
+#wrapper {
+    overflow: hidden;
+    font-family: robokoto;
+}
+
+iframe {
+    border-radius: 10px;
+    margin-bottom: 15px
+}
+
+.block-panel {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px
+}
+
+.btn_1 {
+    background: #FF5722;
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    margin: 15px 0
+}
+
+.btn_1:hover {
+    background: #e84410;
+    color: #fff
+}
+
+.btn_2 {
+    background: #007cde;
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    margin: 15px 0;
+    -webkit-transition: all .5s;
+    transition: all .5s
+}
+
+.btn_2:hover {
+    background: #186bad;
+    color: #fff;
+    -webkit-box-shadow: 0 0 40px -5px gray;
+    box-shadow: 0 0 40px -5px gray
+}
+
+@media (max-width:600px) {
+    .btn_1,
+    .btn_2 {
+        font-size: 16px
+    }
+}
+
+.TitleSection {
+    display: inline-block;
+    font-size: 2rem;
+    border-bottom: 5px solid #00b3b2;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-weight: 700
+}
+
+.TitleSection.white {
+    color: rgb(8, 8, 8);
+    border-color: rgb(65, 130, 226)
+}
+
+@media (max-width:600px) {
+    .TitleSection {
+        font-size: 1.5rem
+    }
+}
+
+.block_white {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px
+}
+
+.sectionTop_imgTop {
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1
+}
+
+.sectionTop_Head {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 7rem 0;
+    z-index: 10;
+}
+
+.sectionTop_Header {
+    color: #404040;
+    font-size: 3.5em;
+    font-family: luat;
+    margin: 65px 0;
+}
+
+.sectionTop_Content {
+    position: relative;
+    min-height: 800px;
+    text-align: center;
+    width: 100%;
+}
+
+.sectionTop .subText {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.sectionTop .subText span {
+    color: #ffef66;
+    font-weight: 700;
+}
+
+@media (max-width:1024px) {
+    .sectionTop {
+        min-height: 48vh;
+    }
+}
+
+@media (max-width:768px) {
+    .sectionTop {
+        min-height: 80vh;
+    }
+    .sectionTop_Content {
+        position: relative;
+        min-height: 65vh;
+    }
+}
+
+@media (max-width:600px) {
+    .sectionTop {
+        min-height: 500px;
+    }
+    .sectionTop_imgTop {
+        bottom: 30%;
+    }
+    .sectionTop_Header {
+        font-size: 1.8em;
+        line-height: 1.4;
+    }
+    .sectionTop_Head {
+        margin: 2rem 0;
+        padding: 0 20px;
+    }
+    .sectionTop_Content {
+        min-height: 450px;
+    }
+    .sectionTop .subText {
+        font-size: 16px;
+    }
+}
+
+.sectionTop_02_video {
+    margin-top: -150px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+@media (max-width:1024px) {
+    .sectionTop_02_video iframe {
+        height: 450px;
+    }
+}
+
+@media (max-width:768px) {
+    .sectionTop_02_video iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width:600px) {
+    .sectionTop_02_video {
+        padding: 10px;
+    }
+    .sectionTop_02_video iframe {
+        height: 180px;
+    }
+}
+
+.sectionMenu .nav_menu {
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.sectionMenu .nav_menu li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    margin-bottom: 0;
+}
+
+.sectionMenu .nav_menu li a {
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px;
+}
+
+.sectionMenu .nav_menu li.active {
+    border-bottom: 3px solid #00bda8;
+}
+
+@media (max-width:768px) {
+    .sectionMenu .nav_menu li a {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width:600px) {
+    .sectionMenu .nav_menu li a {
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+}
+
+.sectionQuyenLoi {
+    margin-bottom: 2rem;
+}
+
+.sectionQuyenLoi .content p {
+    margin-bottom: 15px;
+}
+
+.sectionQuyenLoi_block p {
+    color: rgb(59, 59, 59);
+}
+
+.sectionQuyenLoi_block {
+    background-color: #e2f7eb;
+    min-height: 350px;
+    position: relative;
+    background-size: cover;
+    padding: 30px;
+    border-radius: 10px;
+    margin-right: 8rem;
+    margin-top: 3rem;
+    color: #fff;
+    font-size: 18px;
+    padding-right: 16rem;
+    margin-bottom: 40px;
+}
+
+.sectionQuyenLoi_block .teacher {
+    position: absolute;
+    max-width: 350px;
+    bottom: 0;
+    right: -120px;
+}
+
+@media (max-width:768px) {
+    .sectionQuyenLoi_block {
+        margin-right: 0;
+    }
+}
+
+.sectionQuyenLoi_chitietkhoahoc .block-panel {
+    -webkit-box-shadow: 0 0 15px -5px #868686;
+    box-shadow: 0 0 15px -5px #868686;
+    margin: 20px 0 40px;
+    line-height: 1.8;
+}
+
+.sectionQuyenLoi_chitietkhoahoc .block-panel-2 p {
+    margin-bottom: 5px;
+}
+
+.sectionQuyenLoi_chitietkhoahoc .block-panel-2 .fa-star {
+    color: #FFC107;
+    margin: 0 1px;
+}
+
+.sectionQuyenLoi_chitietkhoahoc .block-panel-1 {
+    background: rgb(210, 241, 255);
+    padding: 20px 60px 20px 35px;
+    line-height: 2.07;
+}
+
+.sectionQuyenLoi_chitietkhoahoc .block-panel-1 .fa {
+    color: #c50000;
+}
+
+.sectionQuyenLoi_chitietkhoahoc iframe {
+    margin-bottom: 10px;
+}
+
+@media (max-width:768px) {
+    .sectionQuyenLoi_chitietkhoahoc iframe {
+        height: 450px;
+    }
+}
+
+@media (max-width:600px) {
+    .sectionQuyenLoi_chitietkhoahoc iframe {
+        height: 220px;
+    }
+}
+
+@media (max-width:600px) {
+    .sectionQuyenLoi_block {
+        margin-right: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+        font-size: 14px;
+    }
+    .sectionQuyenLoi_block .teacher {
+        position: relative;
+        max-width: 280px;
+        bottom: -30px;
+        right: 0;
+    }
+}
+
+.sectionLotrinh {
+    background: rgb(210, 241, 255);
+    padding: 3rem 0;
+}
+
+.sectionLotrinh_list {
+    background: #fff;
+    padding: 20px;
+}
+
+.sectionLotrinh_list .scrollLotrinh {
+    overflow: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+
+.sectionLotrinh_list .card-body {
+    background: #f1f1f1;
+    border-radius: 0 0 8px 8px;
+}
+
+.sectionLotrinh_list .accordion_item {
+    margin-bottom: 15px;
+}
+
+.sectionLotrinh_list .card-header {
+    background: #fff;
+    border: none;
+    padding: 0;
+}
+
+.sectionLotrinh_list .card-header button {
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    -webkit-box-shadow: 0 0 10px -3px #989898;
+    box-shadow: 0 0 10px -3px #989898;
+    color: #000;
+    border-radius: 5px;
+    font-weight: 700;
+    position: relative;
+    font-size: 18px;
+}
+
+@media (max-width:600px) {
+    .sectionLotrinh_list .card-header button {
+        font-size: 14px;
+    }
+}
+
+.sectionLotrinh_list .card-header button.hasIcon::after {
+    content: "\f068";
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 20px;
+    font-size: 15px;
+    top: 19px;
+    color: #00CBBF;
+}
+
+.sectionLotrinh_list .card-header button.hasIcon.collapsed::after {
+    content: "\f067";
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 20px;
+    font-size: 15px;
+    top: 15px;
+}
+
+@media (max-width:600px) {
+    .sectionLotrinh_list .card-header button.hasIcon::after {
+        content: "\f068";
+        top: 19px;
+    }
+    .sectionLotrinh_list .card-header button.hasIcon.collapsed::after {
+        content: "\f067";
+        top: 15px;
+    }
+}
+
+.sectionLotrinh_list .card-header button:hover,
+.sectionLotrinh_list .card-header button:focus {
+    text-decoration: none;
+}
+
+.sectionLotrinh_list ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sectionLotrinh_list ul li a {
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #d4d4d4;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+@media (max-width:600px) {
+    .sectionLotrinh_list ul li a {
+        font-size: 14px;
+    }
+}
+
+.sectionLotrinh_list ul li a .fa {
+    color: #FF5722;
+}
+
+.sectionLotrinh_list ul li a:hover {
+    color: #FF5722;
+}
+
+.sectionTeacher {
+    padding: 3rem 0;
+    background: #fff;
+}
+
+.sectionTeacher_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20px -5px #696969;
+    box-shadow: 0 0 20px -5px #696969;
+}
+
+.sectionTeacher_left {
+    width: 40%;
+}
+
+.sectionTeacher_right {
+    width: 60%;
+}
+
+.sectionTeacher .block_listTeacher {
+    padding: 15px 20px;
+}
+
+.sectionTeacher .block_listTeacher .tabs_listTeacher ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sectionTeacher .block_listTeacher .tabs_listTeacher ul li {
+    position: relative;
+}
+
+.sectionTeacher .block_listTeacher .tabs_listTeacher ul li a.clickAll {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.sectionTeacher .block_listTeacher .tabs__item_block {
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    border-bottom: 1px solid #d0d0d0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.sectionTeacher .block_listTeacher .tabs__item_block:hover {
+    color: #000;
+}
+
+.sectionTeacher .block_listTeacher .tabs__item_block_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 30px;
+    overflow: hidden;
+}
+
+.sectionTeacher .block_listTeacher .tabs__item_block_info {
+    font-weight: 600;
+    width: 80%;
+}
+
+.sectionTeacher .block_listTeacher .tabs__item_block_info p {
+    margin-bottom: 0;
+}
+
+.sectionTeacher .block_listTeacher .tabs__item_block_info h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #00CBBF;
+    margin-bottom: 3px;
+}
+
+@media (max-width:768px) {
+    .sectionTeacher_block {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .sectionTeacher_left {
+        width: 100%;
+    }
+    .sectionTeacher_right {
+        width: 100%;
+    }
+    .sectionTeacher .block_listTeacher .tabs_listTeacher ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .sectionTeacher .block_listTeacher .tabs_listTeacher ul li {
+        width: 48%
+    }
+    .sectionTeacher .block_listTeacher .tabs__item_block_img {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width:600px) {
+    .sectionTeacher_block {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+    .sectionTeacher .block_listTeacher {
+        padding: 15px 15px;
+    }
+    .sectionTeacher .block_listTeacher .tabs_listTeacher ul li {
+        width: 100%;
+    }
+}
+
+.sectionHocPhi {
+    padding: 3rem 0;
+    background-color: rgb(255, 232, 240);
+}
+
+.sectionHocPhi .price {
+    font-weight: 800;
+}
+
+.sectionHocPhi .price-light {
+    text-decoration: line-through;
+    font-weight: 300;
+    height: 28px;
+}
+
+@media (max-width:600px) {
+    .sectionHocPhi .price-light {
+        height: 18px;
+    }
+}
+
+.sectionHocPhi_content {
+    box-shadow: 0 4px 8px 0 rgba(1, 162, 255, 0.37), 0 6px 20px 0 rgba(97, 1, 33, 0.19);
+}
+
+.sectionHocPhi_content .table {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 16px;
+    box-shadow: 10px 10px 10px;
+}
+
+.sectionHocPhi_content th {
+    font-weight: 700;
+}
+
+.sectionHocPhi_content .btn {
+    font-size: 14px;
+    -webkit-box-shadow: 0 0 40px -5px gray;
+    box-shadow: 0 0 40px -5px gray;
+}
+
+@media (max-width:600px) {
+    .sectionHocPhi_content .table * {
+        font-size: 13px;
+    }
+    .sectionHocPhi_content .table td {
+        padding: 5px 10px;
+    }
+    .sectionHocPhi_content .btn {
+        min-width: 100px;
+        font-size: 12px;
+        ;
+        padding: 8px;
+    }
+}
+
+
+/*N1*/
+
+.sectionTop_N1 {
+    background: rgb(255, 232, 240);
+    min-height: 880px;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    padding-top: 10rem;
+    margin-bottom: 30px;
+}
+
+.sectionTop_N1 .imgText {
+    position: absolute;
+    max-width: 800px;
+    height: 200px;
+    margin-top: 40px;
+}
+
+
+/*N2*/
+
+.sectionTop_N2 {
+    background: rgb(255, 232, 240);
+    min-height: 920px;
+    width: 100%;
+    background-repeat: repeat;
+    position: relative;
+    background-size: cover;
+    padding-top: 10rem;
+}
+
+.sectionTop_N2 .imgText {
+    position: absolute;
+    max-width: 600px;
+    right: 500px;
+    margin-top: 40px;
+}
+
+.sectionTop_N2_block_heading_content {
+    width: 40%;
+    line-height: 1.6;
+    border-top: 2px dashed #114da95c;
+    padding-top: 20px;
+}
+
+.sectionTop_N2_block_heading h1 span.num {
+    background: #114da9;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 7rem;
+    position: relative;
+    top: 10px;
+}
+
+.sectionTop_N2_block_heading h1 span.text {
+    font-size: 6.5rem;
+    color: #114da9;
+}
+
+
+/*N3*/
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.sectionLotrinh_list ul li {
+    padding: 15px 0;
+    border-bottom: 1px solid #d4d4d4;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.sectionTop_N3 {
+    background: rgb(255, 232, 240);
+    min-height: 880px;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    padding-top: 10rem;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+@media (max-width: 1600px) and (min-width: 1400px) {
+    .sectionTop_N3 {
+        min-height: 750px;
+    }
+}
+
+.sectionTop_N3_block {
+    position: relative;
+    min-height: 35vh;
+}
+
+.sectionQuyenLoi .tabThongtinkhoahoc {
+    margin-top: 30px;
+}
+
+.sectionQuyenLoi_chitietkhoahoc .block-panel {
+    margin: 20px 0 10px;
+    line-height: 1.8;
+    background: transparent;
+    padding: 10px 10px;
+}
+
+.sectionQuyenLoi .tabthongtinkhoahoc_table table td {
+    font-weight: 600;
+    line-height: 1.6;
+    border-color: #000;
+    border-bottom: 0;
+}
+
+.sectionQuyenLoi .table th {
+    color: #fff;
+    background-color: #5173d2;
+    border-top: 0;
+    border-color: #000;
+}
+
+.sectionQuyenLoi .nav-pills .nav-link {
+    border-radius: 40px;
+    border: 2px solid #005598;
+    font-size: 18px;
+    margin: 0 15px;
+    font-weight: 800;
+    padding: 8px 25px;
+}
+
+
+/*N4*/
+
+.sectionTop_N4 {
+    background: rgb(255, 232, 240);
+    min-height: 880px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    padding-top: 10rem;
+    margin-bottom: 30px;
+}
+
+.sectionTop_N4 .imgText {
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+
+/*N5*/
+
+.sectionTop_N5 {
+    background: rgb(255, 232, 240);
+    min-height: 880px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    padding-top: 10rem;
+    margin-bottom: 30px;
+}
+
+.sectionTop_N5 .imgText {
+    max-width: 600px;
+    margin-top: 40px;
+}
